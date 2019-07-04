@@ -1,0 +1,109 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - "_work/**/*"
+  UseCache: true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Layout/AlignParameters:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/DotPosition:
+  Enabled: true
+  EnforcedStyle: trailing
+
+Layout/IndentFirstArgument:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/IndentFirstArrayElement:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/IndentFirstHashElement:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+# Why bad??
+Lint/EmptyWhen:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 100
+
+Metrics/MethodLength:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# RuboCop's default rule disallows 'has_', but it feels to me
+# that 'a.has_value?' is obviously different from 'a.value?' in that
+# 'a' itself is a 'value' or not.
+Naming/PredicateName:
+  Enabled: true
+  NamePrefixBlacklist: ['is_', 'are_', 'does_']
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: true
+  MinNameLength: 1
+
+Style/AccessModifierDeclarations:
+  Enabled: true
+  EnforcedStyle: inline
+
+Style/AsciiComments:
+  Enabled: true
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+

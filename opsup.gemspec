@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.required_ruby_version = '>= 2.6'
   s.files = Dir['lib/**/*', 'LICENSE', 'README.md']
+
+  s.add_development_dependency 'rubocop', '~> 0.71'
 end
