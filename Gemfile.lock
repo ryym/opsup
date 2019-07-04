@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    opsup (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  opsup!
+
+BUNDLED WITH
+   2.0.1
