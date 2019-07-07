@@ -24,7 +24,7 @@ module Opsup
 
       options = {}
       begin
-        # It automatically exists with a help message if user specified the options for that.
+        # It automatically exits with a help message if necessary.
         commands = parser.parse(argv, into: options)
       rescue OptionParser::MissingArgument => e
         puts e.message
