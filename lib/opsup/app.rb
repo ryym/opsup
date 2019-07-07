@@ -29,15 +29,13 @@ module Opsup
 
     def run(commands, config)
       validate_commands(commands)
-
       @logger.debug("Running #{commands} with #{config.to_h}")
 
       opsworks = new_opsworks_client(config)
+      opsworks_commands = commands.map { |c| command_to_opsworks_command(c) }
 
-      @logger.debug('Verifying the specified stack exists...')
-      stacks = opsworks.describe_stacks.stacks
-      target_stack = stacks.find { |s| s.name == config.stack_name }
-      raise Opsup::Error, "Stack #{config.stack_name} does not exist" if target_stack.nil?
+      stack_operator = Opsup::StackOperator.create(opsworks: opsworks)
+      stack_operator.run_commands(opsworks_commands, stack_name: config.stack_name)
     end
 
     private def validate_commands(commands)
@@ -50,6 +48,11 @@ module Opsup
     private def new_opsworks_client(config)
       creds = Aws::Credentials.new(config.aws_access_key_id, config.aws_secret_access_key)
       Aws::OpsWorks::Client.new(region: config.opsworks_region, credentials: creds)
+    end
+
+    # Assumes the command is a valid value.
+    private def command_to_opsworks_command(command)
+      command == 'update_cookbooks' ? 'update_custom_cookbooks' : command
     end
   end
 end
