@@ -4,8 +4,6 @@ require 'optparse'
 
 module Opsup
   class CLI
-    HELP_CMDS = %w[-h --help].freeze
-
     private_class_method :new
 
     def self.create
@@ -21,16 +19,12 @@ module Opsup
     end
 
     def run(argv)
-      parser = OptionParser.new
+      parser = create_parser
       @option_builder.define_options(parser)
-
-      if help_wanted?(argv)
-        exit_with_help(parser)
-        return false
-      end
 
       options = {}
       begin
+        # It automatically exists with a help message if user specified the options for that.
         commands = parser.parse(argv, into: options)
       rescue OptionParser::MissingArgument => e
         puts e.message
@@ -48,20 +42,22 @@ module Opsup
       true
     end
 
-    private def help_wanted?(argv)
-      argv.any? { |v| HELP_CMDS.include?(v) }
-    end
+    private def create_parser
+      # ref: https://docs.ruby-lang.org/en/2.1.0/OptionParser.html
+      OptionParser.new do |p|
+        p.version = Opsup::VERSION
+        p.banner = <<~BANNER
+          CLI to run Chef commands easily for your OpsWorks stacks.
+          Usage:
+            opsup [options] [commands...]
+          Commands:
+            #{@runner.available_commands.join(', ')}
+          Example:
+            opsup -s stack-name deploy
 
-    private def exit_with_help(parser)
-      puts <<~HELP
-        Opsup runs commands for your OpsWorks stacks.
-        Commands:
-          #{@runner.available_commands.join(', ')}
-        Example:
-          opsup -s stack-name deploy
-
-      HELP
-      parser.parse!([HELP_CMDS[0]])
+          Options:
+        BANNER
+      end
     end
 
     class OptionBuilder
