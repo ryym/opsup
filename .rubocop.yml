@@ -59,6 +59,10 @@ Metrics/MethodLength:
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 
+Metrics/ParameterLists:
+  Enabled: true
+  CountKeywordArgs: false
+
 Metrics/PerceivedComplexity:
   Enabled: false
 
