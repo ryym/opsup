@@ -6,6 +6,10 @@ module Opsup
   class CLI
     HELP_CMDS = %w[-h --help].freeze
 
+    def initialize(runner: Opsup::Runner.create)
+      @runner = runner
+    end
+
     def run(argv)
       parser = build_parser
 
@@ -15,23 +19,26 @@ module Opsup
       end
 
       params = {}
-
       begin
-        args = parser.parse(argv, into: params)
+        commands = parser.parse(argv, into: params)
       rescue OptionParser::MissingArgument => e
         puts e.message
         return false
       end
 
-      p args
-      p params
+      begin
+        @runner.run(commands, params)
+      rescue Opsup::Error => e
+        puts "Error: #{e.message}"
+        return false
+      end
 
       true
     end
 
     private def build_parser
       OptionParser.new.tap do |p|
-        p.on('-s', '--stack STACK_NAME') { |v| v }
+        p.on('-s', '--stack STACK_NAME')
       end
     end
 
@@ -41,7 +48,11 @@ module Opsup
 
     private def exit_with_help(parser)
       puts <<~HELP
-        opsup runs commands for your OpsWorks stacks
+        Opsup runs commands for your OpsWorks stacks.
+        Commands:
+          #{@runner.available_commands.join(', ')}
+        Example:
+          opsup -s stack-name deploy
 
       HELP
       parser.parse!([HELP_CMDS[0]])
