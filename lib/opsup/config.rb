@@ -7,6 +7,7 @@ module Opsup
     attr_reader :aws_secret_access_key
     attr_reader :opsworks_region
     attr_reader :running_mode
+    attr_reader :dryrun
 
     MODES = %i[parallel serial one_then_all].freeze
 
@@ -15,13 +16,15 @@ module Opsup
       aws_access_key_id:,
       aws_secret_access_key:,
       opsworks_region:,
-      running_mode: nil
+      running_mode: nil,
+      dryrun: false
     )
       @stack_name = stack_name
       @aws_access_key_id = aws_access_key_id
       @aws_secret_access_key = aws_secret_access_key
       @opsworks_region = opsworks_region
       @running_mode = running_mode || MODES[0]
+      @dryrun = dryrun
     end
 
     def to_h
@@ -31,6 +34,7 @@ module Opsup
         aws_secret_access_key: aws_secret_access_key,
         opsworks_region: opsworks_region,
         running_mode: running_mode,
+        dryrun: dryrun,
       }
     end
   end

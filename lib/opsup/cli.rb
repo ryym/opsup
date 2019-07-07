@@ -73,6 +73,7 @@ module Opsup
           p.on('-m', '--mode MODE', Opsup::Config::MODES.join(' | ').to_s)
           p.on('--aws-cred KEY_ID,SECRET_KEY', 'AWS credentials')
           p.on('--opsworks-region REGION', 'default: ap-northeast-1')
+          p.on('-d', '--dryrun')
         end
       end
 
@@ -95,6 +96,7 @@ module Opsup
           aws_secret_access_key: aws_secret,
           opsworks_region: options[:"opsworks-region"] || 'ap-northeast-1',
           running_mode: mode,
+          dryrun: options[:dryrun] || false,
         )
       end
     end

@@ -16,7 +16,7 @@ module Opsup
       @logger = logger
     end
 
-    def run_commands(commands, stack_name:, mode:)
+    def run_commands(commands, stack_name:, mode:, dryrun: false)
       # Find the target stack.
       @logger.debug('Verifying the specified stack exists...')
       stacks = @opsworks.describe_stacks.stacks
@@ -45,6 +45,7 @@ module Opsup
         @logger.info("Running #{command} command in #{mode} mode...")
         run_command(
           command,
+          dryrun: dryrun,
           mode: mode,
           stack: stack,
           app: app,
@@ -53,24 +54,24 @@ module Opsup
       end
     end
 
-    private def run_command(command, mode:, stack:, app:, instance_ids:)
+    private def run_command(command, dryrun:, mode:, stack:, app:, instance_ids:)
       case mode
       when :parallel
         @logger.info("Creating single deployment for the #{instance_ids.size} instances...")
-        create_deployment(command, stack, app, instance_ids)
+        create_deployment(command, stack, app, instance_ids) unless dryrun
       when :serial
         instance_ids.each.with_index do |id, i|
           @logger.info("Creating deployment for instances[#{i}] (#{id})...")
-          create_deployment(command, stack, app, [id])
+          create_deployment(command, stack, app, [id]) unless dryrun
         end
       when :one_then_all
         @logger.info("Creating deployment for the first instance (#{instance_ids[0]})...")
-        create_deployment(command, stack, app, [instance_ids[0]])
+        create_deployment(command, stack, app, [instance_ids[0]]) unless dryrun
 
         rest = instance_ids[1..-1]
         if !rest.empty?
           @logger.info("Creating deployment for the other #{rest.size} instances...")
-          create_deployment(command, stack, app, rest)
+          create_deployment(command, stack, app, rest) unless dryrun
         else
           @logger.info('No other instances exist.')
         end

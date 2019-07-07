@@ -29,6 +29,7 @@ module Opsup
 
     def run(commands, config)
       validate_commands(commands)
+      @logger.warn('Started in DRYRUN MODE') if config.dryrun
       @logger.debug("Running #{commands} with #{config.to_h}")
 
       opsworks = new_opsworks_client(config)
@@ -39,7 +40,10 @@ module Opsup
         opsworks_commands,
         stack_name: config.stack_name,
         mode: config.running_mode,
+        dryrun: config.dryrun,
       )
+    ensure
+      @logger.warn('Finished in DRYRUN MODE') if config.dryrun
     end
 
     private def validate_commands(commands)
