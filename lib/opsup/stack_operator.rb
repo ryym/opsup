@@ -33,7 +33,7 @@ module Opsup
       instances = @opsworks.describe_instances(stack_id: stack.stack_id).instances
       instances = instances.reject { |inst| inst.status == 'stopped' }
       @logger.debug(
-        "#{instances.size} #{instances.size == 1 ? 'instance is' : 'instances are'} working",
+        "#{instances.size} #{instances.size == 1 ? 'instance is' : 'instances are'} found",
       )
 
       # Currently Opsup deploys only the first app by default.
