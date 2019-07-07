@@ -19,13 +19,17 @@ module Opsup
       AVAILABLE_COMMANDS
     end
 
-    def run(commands, _params)
+    def run(commands, config)
+      validate_commands(commands)
+
+      puts "Running #{commands} with #{config.inspect}"
+    end
+
+    private def validate_commands(commands)
       raise Opsup::Error, 'No commands specified' if commands.empty?
 
       unknown_cmds = commands - AVAILABLE_COMMANDS
-      raise Opsup::Error, "Unknown commands: #{unknown_cmds.join(' ')}" if !unknown_cmds.empty?
-
-      puts "Running #{commands}"
+      raise Opsup::Error, "Unknown commands: #{unknown_cmds.join(' ')}" unless unknown_cmds.empty?
     end
   end
 end

@@ -3,6 +3,6 @@
 
 require_relative '../lib/opsup'
 
-cli = Opsup::CLI.new
+cli = Opsup::CLI.create
 ok = cli.run(ARGV)
 exit(ok ? 0 : 1)
