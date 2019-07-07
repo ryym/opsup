@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
   s.summary = 'CLI to run commands for AWS OpsWorks'
   s.license = 'MIT'
   s.required_ruby_version = '>= 2.6'
-  s.files = Dir['lib/**/*', 'LICENSE', 'README.md']
+  s.files = Dir['bin/*', 'lib/**/*', 'LICENSE', 'README.md']
+  s.bindir = 'bin'
 
   s.add_development_dependency 'rubocop', '~> 0.71'
 end

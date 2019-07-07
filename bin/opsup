@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/opsup'
+
+cli = Opsup::CLI.new
+ok = cli.run(ARGV)
+exit(ok ? 0 : 1)
