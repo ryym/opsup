@@ -1,2 +1,4 @@
 /_work/
 /*.gem
+
+node_modules/
