@@ -5,7 +5,13 @@ module Opsup
     private_class_method :new
 
     def self.create
-      new
+      new(
+        logger: Opsup::Logger.instance,
+      )
+    end
+
+    def initialize(logger:)
+      @logger = logger
     end
 
     AVAILABLE_COMMANDS = %w[
@@ -22,7 +28,7 @@ module Opsup
     def run(commands, config)
       validate_commands(commands)
 
-      puts "Running #{commands} with #{config.inspect}"
+      @logger.debug("Running #{commands} with #{config.to_h}")
     end
 
     private def validate_commands(commands)

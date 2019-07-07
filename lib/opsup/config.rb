@@ -18,5 +18,14 @@ module Opsup
       @aws_secret_access_key = aws_secret_access_key
       @opsworks_region = opsworks_region
     end
+
+    def to_h
+      {
+        stack_name: stack_name,
+        aws_access_key_id: aws_access_key_id,
+        aws_secret_access_key: aws_secret_access_key,
+        opsworks_region: opsworks_region,
+      }
+    end
   end
 end
