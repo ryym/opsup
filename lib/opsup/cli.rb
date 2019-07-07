@@ -67,12 +67,14 @@ module Opsup
         new
       end
 
+      DEFAULT_OPSWORKS_REGION = 'ap-northeast-1'
+
       def define_options(parser)
         parser.tap do |p|
           p.on('-s', '--stack STACK_NAME', 'target stack name')
           p.on('-m', '--mode MODE', Opsup::Config::MODES.join(' | ').to_s)
           p.on('--aws-cred KEY_ID,SECRET_KEY', 'AWS credentials')
-          p.on('--opsworks-region REGION', 'default: ap-northeast-1')
+          p.on('--opsworks-region REGION', "default: #{DEFAULT_OPSWORKS_REGION}")
           p.on('-d', '--dryrun')
         end
       end
@@ -94,7 +96,7 @@ module Opsup
           stack_name: options[:stack],
           aws_access_key_id: aws_key_id,
           aws_secret_access_key: aws_secret,
-          opsworks_region: options[:"opsworks-region"] || 'ap-northeast-1',
+          opsworks_region: options[:"opsworks-region"] || DEFAULT_OPSWORKS_REGION,
           running_mode: mode,
           dryrun: options[:dryrun] || false,
         )
