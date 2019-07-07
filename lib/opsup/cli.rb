@@ -69,8 +69,9 @@ module Opsup
 
       def define_options(parser)
         parser.tap do |p|
-          p.on('-s', '--stack STACK_NAME')
-          p.on('--aws-cred KEY_ID,SECRET_KEY')
+          p.on('-s', '--stack STACK_NAME', 'target stack name')
+          p.on('--aws-cred KEY_ID,SECRET_KEY', 'AWS credentials')
+          p.on('--opsworks-region REGION', 'default: ap-northeast-1')
         end
       end
 
@@ -88,6 +89,7 @@ module Opsup
           stack: options[:stack],
           aws_access_key_id: aws_key_id,
           aws_secret_access_key: aws_secret,
+          opsworks_region: options[:"opsworks-region"] || 'ap-northeast-1',
         )
       end
     end
