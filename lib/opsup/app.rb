@@ -3,7 +3,7 @@
 require 'aws-sdk-opsworks'
 
 module Opsup
-  class Runner
+  class App
     private_class_method :new
 
     def self.create

@@ -8,13 +8,13 @@ module Opsup
 
     def self.create
       new(
-        runner: Opsup::Runner.create,
+        app: Opsup::App.create,
         option_builder: Opsup::CLI::OptionBuilder.create,
       )
     end
 
-    def initialize(runner:, option_builder:)
-      @runner = runner
+    def initialize(app:, option_builder:)
+      @app = app
       @option_builder = option_builder
     end
 
@@ -33,7 +33,7 @@ module Opsup
 
       begin
         config = @option_builder.generate_config(options)
-        @runner.run(commands, config)
+        @app.run(commands, config)
       rescue Opsup::Error => e
         puts "Error: #{e.message}"
         return false
@@ -51,7 +51,7 @@ module Opsup
           Usage:
             opsup [options] [commands...]
           Commands:
-            #{@runner.available_commands.join(', ')}
+            #{@app.available_commands.join(', ')}
           Example:
             opsup -s stack-name deploy
 
