@@ -14,5 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir['bin/*', 'lib/**/*', 'LICENSE', 'README.md']
   s.bindir = 'bin'
 
+  s.add_dependency 'aws-sdk-opsworks', '~> 1.0'
+
   s.add_development_dependency 'rubocop', '~> 0.71'
 end
