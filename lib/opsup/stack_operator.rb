@@ -16,7 +16,7 @@ module Opsup
       @logger = logger
     end
 
-    def run_commands(commands, stack_name:)
+    def run_commands(commands, stack_name:, mode:)
       # Find the target stack.
       @logger.debug('Verifying the specified stack exists...')
       stacks = @opsworks.describe_stacks.stacks
@@ -42,8 +42,40 @@ module Opsup
 
       # Run the commands sequentially.
       commands.each do |command|
-        @logger.info("Running #{command} command...")
+        @logger.info("Running #{command} command in #{mode} mode...")
+        run_command(
+          command,
+          mode: mode,
+          stack: stack,
+          app: app,
+          instance_ids: instance_ids,
+        )
+      end
+    end
+
+    private def run_command(command, mode:, stack:, app:, instance_ids:)
+      case mode
+      when :parallel
+        @logger.info("Creating single deployment for the #{instance_ids.size} instances...")
         create_deployment(command, stack, app, instance_ids)
+      when :serial
+        instance_ids.each.with_index do |id, i|
+          @logger.info("Creating deployment for instances[#{i}] (#{id})...")
+          create_deployment(command, stack, app, [id])
+        end
+      when :one_then_all
+        @logger.info("Creating deployment for the first instance (#{instance_ids[0]})...")
+        create_deployment(command, stack, app, [instance_ids[0]])
+
+        rest = instance_ids[1..-1]
+        if !rest.empty?
+          @logger.info("Creating deployment for the other #{rest.size} instances...")
+          create_deployment(command, stack, app, rest)
+        else
+          @logger.info('No other instances exist.')
+        end
+      else
+        raise "Unknown running mode: #{mode}"
       end
     end
 

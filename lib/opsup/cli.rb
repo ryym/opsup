@@ -70,6 +70,7 @@ module Opsup
       def define_options(parser)
         parser.tap do |p|
           p.on('-s', '--stack STACK_NAME', 'target stack name')
+          p.on('-m', '--mode MODE', Opsup::Config::MODES.join(' | ').to_s)
           p.on('--aws-cred KEY_ID,SECRET_KEY', 'AWS credentials')
           p.on('--opsworks-region REGION', 'default: ap-northeast-1')
         end
@@ -85,11 +86,15 @@ module Opsup
           raise Opsup::Error, "aws-cred must be 'key_id,secret_key' format"
         end
 
+        mode = options[:mode]&.to_sym
+        raise Opsup::Error, "invalid mode: #{mode}" if mode && !Opsup::Config::MODES.include?(mode)
+
         Opsup::Config.new(
-          stack: options[:stack],
+          stack_name: options[:stack],
           aws_access_key_id: aws_key_id,
           aws_secret_access_key: aws_secret,
           opsworks_region: options[:"opsworks-region"] || 'ap-northeast-1',
+          running_mode: mode,
         )
       end
     end

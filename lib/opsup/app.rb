@@ -35,7 +35,11 @@ module Opsup
       opsworks_commands = commands.map { |c| command_to_opsworks_command(c) }
 
       stack_operator = Opsup::StackOperator.create(opsworks: opsworks)
-      stack_operator.run_commands(opsworks_commands, stack_name: config.stack_name)
+      stack_operator.run_commands(
+        opsworks_commands,
+        stack_name: config.stack_name,
+        mode: config.running_mode,
+      )
     end
 
     private def validate_commands(commands)
