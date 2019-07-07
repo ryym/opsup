@@ -74,16 +74,24 @@ module Opsup
       def define_options(parser)
         parser.tap do |p|
           p.on('-s', '--stack STACK_NAME')
+          p.on('--aws-cred KEY_ID,SECRET_KEY')
         end
       end
 
       def generate_config(options)
-        %i[stack].each do |key|
-          raise Opsup::Error, "missing required option: #{key}" unless options[key]
+        %w[stack aws-cred].each do |key|
+          raise Opsup::Error, "missing required option: --#{key}" unless options[key.to_sym]
+        end
+
+        aws_key_id, aws_secret = options[:"aws-cred"].split(',')
+        if aws_key_id.nil? || aws_secret.nil?
+          raise Opsup::Error, "aws-cred must be 'key_id,secret_key' format"
         end
 
         Opsup::Config.new(
           stack: options[:stack],
+          aws_access_key_id: aws_key_id,
+          aws_secret_access_key: aws_secret,
         )
       end
     end
