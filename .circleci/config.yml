@@ -1,0 +1,9 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3
+    steps:
+      - checkout
+      - run: ls
