@@ -1,9 +1,38 @@
 version: 2.1
 
-jobs:
+workflows:
   build:
+    jobs:
+      - release:
+          filters:
+            tags:
+              only: /v[0-9.]+/
+            branches:
+              ignore: /.*/
+
+jobs:
+  # Currently we have no tests...
+  release:
     docker:
       - image: circleci/ruby:2.6.3
     steps:
       - checkout
-      - run: ls
+      - setup_gem_credentials
+      - run: gem build opsup.gemspec -o opsup.gem
+      - run: gem push opsup.gem
+
+commands:
+  # You can check the credentails file format by caling the API:
+  # `curl -u $NAME https://rubygems.org/api/v1/api_key.yaml`
+  # (See your Rubygems profile page for the details)
+  setup_gem_credentials:
+    steps:
+      - run:
+          name: Configure gem authentication
+          command: |
+            mkdir ~/.gem
+            cat \<<EOF > ~/.gem/credentials
+            ---
+            :rubygems_api_key: $GEM_API_KEY
+            EOF
+            chmod 0600 ~/.gem/credentials
