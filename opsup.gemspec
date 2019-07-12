@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.6'
   s.files = Dir['bin/*', 'lib/**/*', 'LICENSE', 'README.md']
   s.bindir = 'bin'
+  s.executables = ["opsup"]
 
   s.add_dependency 'aws-sdk-opsworks', '~> 1.0'
 
