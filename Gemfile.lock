@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    opsup (0.0.0)
+    opsup (0.0.1)
       aws-sdk-opsworks (~> 1.0)
 
 GEM
