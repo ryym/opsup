@@ -11,5 +11,6 @@ COPY lib /opsup/lib
 
 RUN bundle install
 
-ENTRYPOINT ["bin/opsup"]
+ENV PATH=/opsup/bin:$PATH
+ENTRYPOINT ["opsup"]
 
