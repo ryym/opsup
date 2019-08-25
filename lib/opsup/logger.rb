@@ -1,9 +1,15 @@
+# typed: strict
 # frozen_string_literal: true
 
 require 'logger'
 
 module Opsup
   class Logger
+    extend T::Sig
+
+    @instance = T.let(nil, T.nilable(::Logger))
+
+    sig { returns(::Logger) }
     def self.instance
       env_log_level = ENV['OPSUP_LOG_LEVEL']
       log_level =

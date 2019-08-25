@@ -1,9 +1,11 @@
+# typed: strict
 # frozen_string_literal: true
 
 module Opsup
   class StackOperator
-    private_class_method :new
+    extend T::Sig
 
+    sig { params(opsworks: Aws::OpsWorks::Client).returns(Opsup::StackOperator) }
     def self.create(opsworks:)
       new(
         opsworks: opsworks,
@@ -11,11 +13,20 @@ module Opsup
       )
     end
 
+    sig { params(opsworks: Aws::OpsWorks::Client, logger: ::Logger).void }
     def initialize(opsworks:, logger:)
-      @opsworks = opsworks
-      @logger = logger
+      @opsworks = T.let(opsworks, Aws::OpsWorks::Client)
+      @logger = T.let(logger, ::Logger)
     end
 
+    sig do
+      params(
+        commands: T::Array[String],
+        stack_name: String,
+        mode: Symbol,
+        dryrun: T::Boolean,
+      ).void
+    end
     def run_commands(commands, stack_name:, mode:, dryrun: false)
       # Find the target stack.
       @logger.debug('Verifying the specified stack exists...')
@@ -32,6 +43,9 @@ module Opsup
       @logger.debug('Finding all working instances in the stack...')
       instances = @opsworks.describe_instances(stack_id: stack.stack_id).instances
       instances = instances.reject { |inst| inst.status == 'stopped' }
+
+      raise Opsup::Error, 'No available instances found' if instances.empty?
+
       @logger.debug(
         "#{instances.size} #{instances.size == 1 ? 'instance is' : 'instances are'} found",
       )
@@ -54,6 +68,16 @@ module Opsup
       end
     end
 
+    sig do
+      params(
+        command: String,
+        dryrun: T::Boolean,
+        mode: Symbol,
+        stack: Aws::OpsWorks::Types::Stack,
+        app: Aws::OpsWorks::Types::App,
+        instance_ids: T::Array[String],
+      ).void
+    end
     private def run_command(command, dryrun:, mode:, stack:, app:, instance_ids:)
       case mode
       when :parallel
@@ -66,9 +90,9 @@ module Opsup
         end
       when :one_then_all
         @logger.info("Creating deployment for the first instance (#{instance_ids[0]})...")
-        create_deployment(command, stack, app, [instance_ids[0]]) unless dryrun
+        create_deployment(command, stack, app, [T.must(instance_ids[0])]) unless dryrun
 
-        rest = instance_ids[1..-1]
+        rest = T.must(instance_ids[1..-1])
         if !rest.empty?
           @logger.info("Creating deployment for the other #{rest.size} instances...")
           create_deployment(command, stack, app, rest) unless dryrun
@@ -80,6 +104,14 @@ module Opsup
       end
     end
 
+    sig do
+      params(
+        command: String,
+        stack: Aws::OpsWorks::Types::Stack,
+        app: Aws::OpsWorks::Types::App,
+        instance_ids: T::Array[String],
+      ).void
+    end
     private def create_deployment(command, stack, app, instance_ids)
       res = @opsworks.create_deployment(
         stack_id: stack.stack_id,

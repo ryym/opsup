@@ -1,11 +1,13 @@
+# typed: strict
 # frozen_string_literal: true
 
 require 'optparse'
 
 module Opsup
   class CLI
-    private_class_method :new
+    extend T::Sig
 
+    sig { returns(Opsup::CLI) }
     def self.create
       new(
         app: Opsup::App.create,
@@ -13,11 +15,13 @@ module Opsup
       )
     end
 
+    sig { params(app: Opsup::App, option_builder: Opsup::CLI::OptionBuilder).void }
     def initialize(app:, option_builder:)
-      @app = app
-      @option_builder = option_builder
+      @app = T.let(app, Opsup::App)
+      @option_builder = T.let(option_builder, Opsup::CLI::OptionBuilder)
     end
 
+    sig { params(argv: T::Array[String]).returns(T::Boolean) }
     def run(argv)
       parser = create_parser
       @option_builder.define_options(parser)
@@ -42,6 +46,7 @@ module Opsup
       true
     end
 
+    sig { returns(OptionParser) }
     private def create_parser
       # ref: https://docs.ruby-lang.org/en/2.1.0/OptionParser.html
       OptionParser.new do |p|
@@ -61,14 +66,16 @@ module Opsup
     end
 
     class OptionBuilder
-      private_class_method :new
+      extend T::Sig
 
+      sig { returns(Opsup::CLI::OptionBuilder) }
       def self.create
         new
       end
 
       DEFAULT_OPSWORKS_REGION = 'ap-northeast-1'
 
+      sig { params(parser: OptionParser).returns(OptionParser) }
       def define_options(parser)
         parser.tap do |p|
           p.on('-s', '--stack STACK_NAME', 'target stack name')
@@ -79,6 +86,7 @@ module Opsup
         end
       end
 
+      sig { params(options: T::Hash[Symbol, T.untyped]).returns(Opsup::Config) }
       def generate_config(options)
         %w[stack aws-cred].each do |key|
           raise Opsup::Error, "missing required option: --#{key}" unless options[key.to_sym]
