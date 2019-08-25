@@ -1,6 +1,8 @@
 # typed: strong
 # frozen_string_literal: true
 
+require 'sorbet-runtime'
+
 require_relative 'opsup/version'
 require_relative 'opsup/error'
 require_relative 'opsup/config'
