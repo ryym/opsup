@@ -1,6 +1,10 @@
 version: 2.1
 
 workflows:
+  test:
+    jobs:
+      - test
+
   build:
     jobs:
       - release:
@@ -10,11 +14,24 @@ workflows:
             branches:
               ignore: /.*/
 
-jobs:
-  # Currently we have no tests...
-  release:
+executors:
+  ruby:
     docker:
       - image: circleci/ruby:2.6.3
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+
+jobs:
+  test:
+    executor: ruby
+    steps:
+      - checkout
+      - bundle_install
+      - run: bundle exec srb typecheck --ignore $BUNDLE_PATH
+
+  release:
+    executor: ruby
     steps:
       - checkout
       - setup_gem_credentials
@@ -22,6 +39,18 @@ jobs:
       - run: gem push opsup.gem
 
 commands:
+  bundle_install:
+    steps:
+      - run: gem install bundler:2.0.1
+      - restore_cache:
+          keys:
+            - bundle-{{ arch }}-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install
+      - save_cache:
+          key: bundle-{{ arch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
   # You can check the credentails file format by caling the API:
   # `curl -u $NAME https://rubygems.org/api/v1/api_key.yaml`
   # (See your Rubygems profile page for the details)
