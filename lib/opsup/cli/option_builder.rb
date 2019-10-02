@@ -24,6 +24,24 @@ module Opsup
         end
       end
 
+      sig do
+        params(
+          env_vars: T::Hash[String, T.nilable(String)],
+        ).returns(T::Hash[Symbol, T.untyped])
+      end
+      def options_from_env_vars(env_vars)
+        [
+          %w[stack STACK],
+          %w[mode MODE],
+          %w[aws-cred AWS_CRED],
+          %w[opsworks-region OPSWORKS_REGION],
+          %w[dryrun DRYRUN],
+        ].each_with_object({}) do |(key, env_key), obj|
+          value = env_vars["OPSUP_#{env_key}"]
+          obj[key.to_sym] = value if value
+        end
+      end
+
       sig { params(options: T::Hash[Symbol, T.untyped]).returns(Opsup::Config) }
       def generate_config(options)
         %w[stack aws-cred].each do |key|

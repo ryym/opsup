@@ -13,13 +13,21 @@ module Opsup
       new(
         app: Opsup::App.create,
         option_builder: Opsup::CLI::OptionBuilder.create,
+        env_vars: ENV.to_h,
       )
     end
 
-    sig { params(app: Opsup::App, option_builder: Opsup::CLI::OptionBuilder).void }
-    def initialize(app:, option_builder:)
+    sig do
+      params(
+        app: Opsup::App,
+        option_builder: Opsup::CLI::OptionBuilder,
+        env_vars: T::Hash[String, T.nilable(String)],
+      ).void
+    end
+    def initialize(app:, option_builder:, env_vars:)
       @app = T.let(app, Opsup::App)
       @option_builder = T.let(option_builder, Opsup::CLI::OptionBuilder)
+      @env_vars = T.let(env_vars, T::Hash[String, T.nilable(String)])
     end
 
     sig { params(argv: T::Array[String]).returns(T::Boolean) }
@@ -27,7 +35,7 @@ module Opsup
       parser = create_parser
       @option_builder.define_options(parser)
 
-      options = {}
+      options = @option_builder.options_from_env_vars(@env_vars)
       begin
         # It automatically exits with a help message if necessary.
         commands = parser.parse(argv, into: options)
