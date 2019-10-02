@@ -1,8 +1,6 @@
 # typed: strict
 # frozen_string_literal: true
 
-require 'aws-sdk-opsworks'
-
 module Opsup
   class App
     extend T::Sig
@@ -41,15 +39,16 @@ module Opsup
       @logger.debug("Running #{commands} with #{config.to_h}")
 
       opsworks = new_opsworks_client(config)
-      opsworks_commands = commands.map { |c| command_to_opsworks_command(c) }
-
       stack_operator = Opsup::StackOperator.create(opsworks: opsworks)
-      stack_operator.run_commands(
-        opsworks_commands,
+      deployer = stack_operator.new_deployer(
         stack_name: config.stack_name,
         mode: config.running_mode,
         dryrun: config.dryrun,
       )
+
+      commands.each do |command|
+        deployer.run_command(command_to_opsworks_command(command))
+      end
     ensure
       @logger.warn('Finished in DRYRUN MODE') if config.dryrun
     end

@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'sorbet-runtime'
+require 'aws-sdk-opsworks'
 
 require_relative 'opsup/version'
 require_relative 'opsup/error'

@@ -1,6 +1,8 @@
 # typed: strict
 # frozen_string_literal: true
 
+require_relative 'stack_operator/command_deployer'
+
 module Opsup
   class StackOperator
     extend T::Sig
@@ -21,13 +23,12 @@ module Opsup
 
     sig do
       params(
-        commands: T::Array[String],
         stack_name: String,
         mode: Symbol,
         dryrun: T::Boolean,
-      ).void
+      ).returns(StackOperator::CommandDeployer)
     end
-    def run_commands(commands, stack_name:, mode:, dryrun: false)
+    def new_deployer(stack_name:, mode:, dryrun: false)
       # Find the target stack.
       @logger.debug('Verifying the specified stack exists...')
       stacks = @opsworks.describe_stacks.stacks
@@ -50,82 +51,19 @@ module Opsup
         "#{instances.size} #{instances.size == 1 ? 'instance is' : 'instances are'} found",
       )
 
-      # Currently Opsup deploys only the first app by default.
-      app = apps.first
-      instance_ids = instances.map(&:instance_id)
-
-      # Run the commands sequentially.
-      commands.each do |command|
-        @logger.info("Running #{command} command in #{mode} mode...")
-        run_command(
-          command,
-          dryrun: dryrun,
-          mode: mode,
-          stack: stack,
-          app: app,
-          instance_ids: instance_ids,
-        )
-      end
-    end
-
-    sig do
-      params(
-        command: String,
-        dryrun: T::Boolean,
-        mode: Symbol,
-        stack: Aws::OpsWorks::Types::Stack,
-        app: Aws::OpsWorks::Types::App,
-        instance_ids: T::Array[String],
-      ).void
-    end
-    private def run_command(command, dryrun:, mode:, stack:, app:, instance_ids:)
-      case mode
-      when :parallel
-        @logger.info("Creating single deployment for the #{instance_ids.size} instances...")
-        create_deployment(command, stack, app, instance_ids) unless dryrun
-      when :serial
-        instance_ids.each.with_index do |id, i|
-          @logger.info("Creating deployment for instances[#{i}] (#{id})...")
-          create_deployment(command, stack, app, [id]) unless dryrun
-        end
-      when :one_then_all
-        @logger.info("Creating deployment for the first instance (#{instance_ids[0]})...")
-        create_deployment(command, stack, app, [T.must(instance_ids[0])]) unless dryrun
-
-        rest = T.must(instance_ids[1..-1])
-        if !rest.empty?
-          @logger.info("Creating deployment for the other #{rest.size} instances...")
-          create_deployment(command, stack, app, rest) unless dryrun
-        else
-          @logger.info('No other instances exist.')
-        end
-      else
-        raise "Unknown running mode: #{mode}"
-      end
-    end
-
-    sig do
-      params(
-        command: String,
-        stack: Aws::OpsWorks::Types::Stack,
-        app: Aws::OpsWorks::Types::App,
-        instance_ids: T::Array[String],
-      ).void
-    end
-    private def create_deployment(command, stack, app, instance_ids)
-      res = @opsworks.create_deployment(
-        stack_id: stack.stack_id,
-        app_id: app.app_id,
-        instance_ids: instance_ids,
-        command: { name: command, args: {} },
+      config = StackOperator::CommandDeployer::Config.new(
+        stack: stack,
+        mode: mode,
+        # Currently Opsup deploys only the first app by default.
+        app: apps.first,
+        instance_ids: instances.map(&:instance_id),
+        dryrun: dryrun,
       )
-
-      @logger.info("Waiting deployment #{res.deployment_id}...")
-      @opsworks.wait_until(:deployment_successful, {
-        deployment_ids: [res.deployment_id],
-      })
-
-      nil
+      StackOperator::CommandDeployer.create(
+        config: config,
+        opsworks: @opsworks,
+        logger: @logger,
+      )
     end
   end
 end
