@@ -16,6 +16,7 @@ gem install opsup
 
 Currently Opsup can run these commands:
 
+- `upload_cookbooks` (to S3)
 - `update_cookbooks`
 - `setup`
 - `configure`
@@ -31,7 +32,6 @@ Opsup waits until the command completes.
 
 ### TODO
 
-- Add a command to build cookbooks and upload them to S3
 - Write tests
 - (maybe) Load options from environment varibles or a configuration file
 - (maybe) Add commands to create, start, stop, and delete instances

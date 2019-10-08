@@ -7,9 +7,7 @@ module Opsup
 
     sig { returns(Opsup::App) }
     def self.create
-      new(
-        logger: Opsup::Logger.instance,
-      )
+      new(logger: Opsup::Logger.instance)
     end
 
     sig { params(logger: ::Logger).void }
@@ -19,6 +17,7 @@ module Opsup
 
     AVAILABLE_COMMANDS = T.let(
       %w[
+        upload_cookbooks
         update_cookbooks
         setup
         configure
@@ -47,6 +46,10 @@ module Opsup
       )
 
       commands.each do |command|
+        if command == 'upload_cookbooks'
+          upload_cookbooks(config)
+          next
+        end
         deployer.run_command(command_to_opsworks_command(command))
       end
     ensure
@@ -71,6 +74,33 @@ module Opsup
     sig { params(command: String).returns(String) }
     private def command_to_opsworks_command(command)
       command == 'update_cookbooks' ? 'update_custom_cookbooks' : command
+    end
+
+    sig { params(config: Opsup::Config).void }
+    def upload_cookbooks(config)
+      if config.cookbook_url.nil?
+        raise Opsup::Error, 'cookbook URL is required to run upload_cookbooks'
+      end
+      if config.s3_bucket_name.nil?
+        raise Opsup::Error, 'S3 Bucket name is required to run upload_cookbooks'
+      end
+
+      s3_object_config = CookbookUploader::S3ObjectConfig.new(
+        bucket_name: T.must(config.s3_bucket_name),
+        key: "cookbook_#{config.stack_name}.tar.gz",
+      )
+
+      cookbook_uploader = CookbookUploader.create(s3: new_s3_client(config), config: config)
+      cookbook_uploader.build_and_upload(
+        cookbook_url: T.must(config.cookbook_url),
+        s3_object_config: s3_object_config,
+      )
+    end
+
+    sig { params(config: Opsup::Config).returns(Aws::S3::Client) }
+    private def new_s3_client(config)
+      creds = Aws::Credentials.new(config.aws_access_key_id, config.aws_secret_access_key)
+      Aws::S3::Client.new(region: config.s3_region, credentials: creds)
     end
   end
 end

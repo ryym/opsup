@@ -7,12 +7,12 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/aws-sdk-opsworks/all/aws-sdk-opsworks.rbi
 #
-# aws-sdk-opsworks-1.19.0
+# aws-sdk-opsworks-1.20.0
 module Aws::OpsWorks
 end
 module Aws::OpsWorks::Types
 end
-class Anonymous_Struct_28 < Struct
+class Anonymous_Struct_30 < Struct
   def configuration_manager; end
   def configuration_manager=(_); end
   def self.[](*arg0); end
@@ -22,10 +22,10 @@ class Anonymous_Struct_28 < Struct
   def version; end
   def version=(_); end
 end
-class Aws::OpsWorks::Types::AgentVersion < Anonymous_Struct_28
+class Aws::OpsWorks::Types::AgentVersion < Anonymous_Struct_30
   include Aws::Structure
 end
-class Anonymous_Struct_29 < Struct
+class Anonymous_Struct_31 < Struct
   def app_id; end
   def app_id=(_); end
   def app_source; end
@@ -59,10 +59,10 @@ class Anonymous_Struct_29 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::App < Anonymous_Struct_29
+class Aws::OpsWorks::Types::App < Anonymous_Struct_31
   include Aws::Structure
 end
-class Anonymous_Struct_30 < Struct
+class Anonymous_Struct_32 < Struct
   def instance_id; end
   def instance_id=(_); end
   def layer_ids; end
@@ -72,10 +72,10 @@ class Anonymous_Struct_30 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::AssignInstanceRequest < Anonymous_Struct_30
+class Aws::OpsWorks::Types::AssignInstanceRequest < Anonymous_Struct_32
   include Aws::Structure
 end
-class Anonymous_Struct_31 < Struct
+class Anonymous_Struct_33 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -85,10 +85,10 @@ class Anonymous_Struct_31 < Struct
   def volume_id; end
   def volume_id=(_); end
 end
-class Aws::OpsWorks::Types::AssignVolumeRequest < Anonymous_Struct_31
+class Aws::OpsWorks::Types::AssignVolumeRequest < Anonymous_Struct_33
   include Aws::Structure
 end
-class Anonymous_Struct_32 < Struct
+class Anonymous_Struct_34 < Struct
   def elastic_ip; end
   def elastic_ip=(_); end
   def instance_id; end
@@ -98,10 +98,10 @@ class Anonymous_Struct_32 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::AssociateElasticIpRequest < Anonymous_Struct_32
+class Aws::OpsWorks::Types::AssociateElasticIpRequest < Anonymous_Struct_34
   include Aws::Structure
 end
-class Anonymous_Struct_33 < Struct
+class Anonymous_Struct_35 < Struct
   def elastic_load_balancer_name; end
   def elastic_load_balancer_name=(_); end
   def layer_id; end
@@ -111,10 +111,10 @@ class Anonymous_Struct_33 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::AttachElasticLoadBalancerRequest < Anonymous_Struct_33
+class Aws::OpsWorks::Types::AttachElasticLoadBalancerRequest < Anonymous_Struct_35
   include Aws::Structure
 end
-class Anonymous_Struct_34 < Struct
+class Anonymous_Struct_36 < Struct
   def alarms; end
   def alarms=(_); end
   def cpu_threshold; end
@@ -134,10 +134,10 @@ class Anonymous_Struct_34 < Struct
   def thresholds_wait_time; end
   def thresholds_wait_time=(_); end
 end
-class Aws::OpsWorks::Types::AutoScalingThresholds < Anonymous_Struct_34
+class Aws::OpsWorks::Types::AutoScalingThresholds < Anonymous_Struct_36
   include Aws::Structure
 end
-class Anonymous_Struct_35 < Struct
+class Anonymous_Struct_37 < Struct
   def device_name; end
   def device_name=(_); end
   def ebs; end
@@ -151,10 +151,10 @@ class Anonymous_Struct_35 < Struct
   def virtual_name; end
   def virtual_name=(_); end
 end
-class Aws::OpsWorks::Types::BlockDeviceMapping < Anonymous_Struct_35
+class Aws::OpsWorks::Types::BlockDeviceMapping < Anonymous_Struct_37
   include Aws::Structure
 end
-class Anonymous_Struct_36 < Struct
+class Anonymous_Struct_38 < Struct
   def berkshelf_version; end
   def berkshelf_version=(_); end
   def manage_berkshelf; end
@@ -164,10 +164,10 @@ class Anonymous_Struct_36 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::ChefConfiguration < Anonymous_Struct_36
+class Aws::OpsWorks::Types::ChefConfiguration < Anonymous_Struct_38
   include Aws::Structure
 end
-class Anonymous_Struct_37 < Struct
+class Anonymous_Struct_39 < Struct
   def agent_version; end
   def agent_version=(_); end
   def attributes; end
@@ -217,10 +217,10 @@ class Anonymous_Struct_37 < Struct
   def vpc_id; end
   def vpc_id=(_); end
 end
-class Aws::OpsWorks::Types::CloneStackRequest < Anonymous_Struct_37
+class Aws::OpsWorks::Types::CloneStackRequest < Anonymous_Struct_39
   include Aws::Structure
 end
-class Anonymous_Struct_38 < Struct
+class Anonymous_Struct_40 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -228,10 +228,10 @@ class Anonymous_Struct_38 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::CloneStackResult < Anonymous_Struct_38
+class Aws::OpsWorks::Types::CloneStackResult < Anonymous_Struct_40
   include Aws::Structure
 end
-class Anonymous_Struct_39 < Struct
+class Anonymous_Struct_41 < Struct
   def enabled; end
   def enabled=(_); end
   def log_streams; end
@@ -241,10 +241,10 @@ class Anonymous_Struct_39 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::CloudWatchLogsConfiguration < Anonymous_Struct_39
+class Aws::OpsWorks::Types::CloudWatchLogsConfiguration < Anonymous_Struct_41
   include Aws::Structure
 end
-class Anonymous_Struct_40 < Struct
+class Anonymous_Struct_42 < Struct
   def batch_count; end
   def batch_count=(_); end
   def batch_size; end
@@ -272,10 +272,10 @@ class Anonymous_Struct_40 < Struct
   def time_zone; end
   def time_zone=(_); end
 end
-class Aws::OpsWorks::Types::CloudWatchLogsLogStream < Anonymous_Struct_40
+class Aws::OpsWorks::Types::CloudWatchLogsLogStream < Anonymous_Struct_42
   include Aws::Structure
 end
-class Anonymous_Struct_41 < Struct
+class Anonymous_Struct_43 < Struct
   def acknowledged_at; end
   def acknowledged_at=(_); end
   def command_id; end
@@ -301,10 +301,10 @@ class Anonymous_Struct_41 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::Command < Anonymous_Struct_41
+class Aws::OpsWorks::Types::Command < Anonymous_Struct_43
   include Aws::Structure
 end
-class Anonymous_Struct_42 < Struct
+class Anonymous_Struct_44 < Struct
   def app_source; end
   def app_source=(_); end
   def attributes; end
@@ -334,10 +334,10 @@ class Anonymous_Struct_42 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::CreateAppRequest < Anonymous_Struct_42
+class Aws::OpsWorks::Types::CreateAppRequest < Anonymous_Struct_44
   include Aws::Structure
 end
-class Anonymous_Struct_43 < Struct
+class Anonymous_Struct_45 < Struct
   def app_id; end
   def app_id=(_); end
   def self.[](*arg0); end
@@ -345,10 +345,10 @@ class Anonymous_Struct_43 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::CreateAppResult < Anonymous_Struct_43
+class Aws::OpsWorks::Types::CreateAppResult < Anonymous_Struct_45
   include Aws::Structure
 end
-class Anonymous_Struct_44 < Struct
+class Anonymous_Struct_46 < Struct
   def app_id; end
   def app_id=(_); end
   def command; end
@@ -368,10 +368,10 @@ class Anonymous_Struct_44 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::CreateDeploymentRequest < Anonymous_Struct_44
+class Aws::OpsWorks::Types::CreateDeploymentRequest < Anonymous_Struct_46
   include Aws::Structure
 end
-class Anonymous_Struct_45 < Struct
+class Anonymous_Struct_47 < Struct
   def deployment_id; end
   def deployment_id=(_); end
   def self.[](*arg0); end
@@ -379,10 +379,10 @@ class Anonymous_Struct_45 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::CreateDeploymentResult < Anonymous_Struct_45
+class Aws::OpsWorks::Types::CreateDeploymentResult < Anonymous_Struct_47
   include Aws::Structure
 end
-class Anonymous_Struct_46 < Struct
+class Anonymous_Struct_48 < Struct
   def agent_version; end
   def agent_version=(_); end
   def ami_id; end
@@ -424,10 +424,10 @@ class Anonymous_Struct_46 < Struct
   def virtualization_type; end
   def virtualization_type=(_); end
 end
-class Aws::OpsWorks::Types::CreateInstanceRequest < Anonymous_Struct_46
+class Aws::OpsWorks::Types::CreateInstanceRequest < Anonymous_Struct_48
   include Aws::Structure
 end
-class Anonymous_Struct_47 < Struct
+class Anonymous_Struct_49 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -435,10 +435,10 @@ class Anonymous_Struct_47 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::CreateInstanceResult < Anonymous_Struct_47
+class Aws::OpsWorks::Types::CreateInstanceResult < Anonymous_Struct_49
   include Aws::Structure
 end
-class Anonymous_Struct_48 < Struct
+class Anonymous_Struct_50 < Struct
   def attributes; end
   def attributes=(_); end
   def auto_assign_elastic_ips; end
@@ -480,10 +480,10 @@ class Anonymous_Struct_48 < Struct
   def volume_configurations; end
   def volume_configurations=(_); end
 end
-class Aws::OpsWorks::Types::CreateLayerRequest < Anonymous_Struct_48
+class Aws::OpsWorks::Types::CreateLayerRequest < Anonymous_Struct_50
   include Aws::Structure
 end
-class Anonymous_Struct_49 < Struct
+class Anonymous_Struct_51 < Struct
   def layer_id; end
   def layer_id=(_); end
   def self.[](*arg0); end
@@ -491,10 +491,10 @@ class Anonymous_Struct_49 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::CreateLayerResult < Anonymous_Struct_49
+class Aws::OpsWorks::Types::CreateLayerResult < Anonymous_Struct_51
   include Aws::Structure
 end
-class Anonymous_Struct_50 < Struct
+class Anonymous_Struct_52 < Struct
   def agent_version; end
   def agent_version=(_); end
   def attributes; end
@@ -538,10 +538,10 @@ class Anonymous_Struct_50 < Struct
   def vpc_id; end
   def vpc_id=(_); end
 end
-class Aws::OpsWorks::Types::CreateStackRequest < Anonymous_Struct_50
+class Aws::OpsWorks::Types::CreateStackRequest < Anonymous_Struct_52
   include Aws::Structure
 end
-class Anonymous_Struct_51 < Struct
+class Anonymous_Struct_53 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -549,10 +549,10 @@ class Anonymous_Struct_51 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::CreateStackResult < Anonymous_Struct_51
+class Aws::OpsWorks::Types::CreateStackResult < Anonymous_Struct_53
   include Aws::Structure
 end
-class Anonymous_Struct_52 < Struct
+class Anonymous_Struct_54 < Struct
   def allow_self_management; end
   def allow_self_management=(_); end
   def iam_user_arn; end
@@ -566,10 +566,10 @@ class Anonymous_Struct_52 < Struct
   def ssh_username; end
   def ssh_username=(_); end
 end
-class Aws::OpsWorks::Types::CreateUserProfileRequest < Anonymous_Struct_52
+class Aws::OpsWorks::Types::CreateUserProfileRequest < Anonymous_Struct_54
   include Aws::Structure
 end
-class Anonymous_Struct_53 < Struct
+class Anonymous_Struct_55 < Struct
   def iam_user_arn; end
   def iam_user_arn=(_); end
   def self.[](*arg0); end
@@ -577,10 +577,10 @@ class Anonymous_Struct_53 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::CreateUserProfileResult < Anonymous_Struct_53
+class Aws::OpsWorks::Types::CreateUserProfileResult < Anonymous_Struct_55
   include Aws::Structure
 end
-class Anonymous_Struct_54 < Struct
+class Anonymous_Struct_56 < Struct
   def arn; end
   def arn=(_); end
   def database_name; end
@@ -592,10 +592,10 @@ class Anonymous_Struct_54 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::DataSource < Anonymous_Struct_54
+class Aws::OpsWorks::Types::DataSource < Anonymous_Struct_56
   include Aws::Structure
 end
-class Anonymous_Struct_55 < Struct
+class Anonymous_Struct_57 < Struct
   def app_id; end
   def app_id=(_); end
   def self.[](*arg0); end
@@ -603,10 +603,10 @@ class Anonymous_Struct_55 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeleteAppRequest < Anonymous_Struct_55
+class Aws::OpsWorks::Types::DeleteAppRequest < Anonymous_Struct_57
   include Aws::Structure
 end
-class Anonymous_Struct_56 < Struct
+class Anonymous_Struct_58 < Struct
   def delete_elastic_ip; end
   def delete_elastic_ip=(_); end
   def delete_volumes; end
@@ -618,10 +618,10 @@ class Anonymous_Struct_56 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeleteInstanceRequest < Anonymous_Struct_56
+class Aws::OpsWorks::Types::DeleteInstanceRequest < Anonymous_Struct_58
   include Aws::Structure
 end
-class Anonymous_Struct_57 < Struct
+class Anonymous_Struct_59 < Struct
   def layer_id; end
   def layer_id=(_); end
   def self.[](*arg0); end
@@ -629,10 +629,10 @@ class Anonymous_Struct_57 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeleteLayerRequest < Anonymous_Struct_57
+class Aws::OpsWorks::Types::DeleteLayerRequest < Anonymous_Struct_59
   include Aws::Structure
 end
-class Anonymous_Struct_58 < Struct
+class Anonymous_Struct_60 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -640,10 +640,10 @@ class Anonymous_Struct_58 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DeleteStackRequest < Anonymous_Struct_58
+class Aws::OpsWorks::Types::DeleteStackRequest < Anonymous_Struct_60
   include Aws::Structure
 end
-class Anonymous_Struct_59 < Struct
+class Anonymous_Struct_61 < Struct
   def iam_user_arn; end
   def iam_user_arn=(_); end
   def self.[](*arg0); end
@@ -651,10 +651,10 @@ class Anonymous_Struct_59 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeleteUserProfileRequest < Anonymous_Struct_59
+class Aws::OpsWorks::Types::DeleteUserProfileRequest < Anonymous_Struct_61
   include Aws::Structure
 end
-class Anonymous_Struct_60 < Struct
+class Anonymous_Struct_62 < Struct
   def app_id; end
   def app_id=(_); end
   def command; end
@@ -684,10 +684,10 @@ class Anonymous_Struct_60 < Struct
   def status; end
   def status=(_); end
 end
-class Aws::OpsWorks::Types::Deployment < Anonymous_Struct_60
+class Aws::OpsWorks::Types::Deployment < Anonymous_Struct_62
   include Aws::Structure
 end
-class Anonymous_Struct_61 < Struct
+class Anonymous_Struct_63 < Struct
   def args; end
   def args=(_); end
   def name; end
@@ -697,10 +697,10 @@ class Anonymous_Struct_61 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeploymentCommand < Anonymous_Struct_61
+class Aws::OpsWorks::Types::DeploymentCommand < Anonymous_Struct_63
   include Aws::Structure
 end
-class Anonymous_Struct_62 < Struct
+class Anonymous_Struct_64 < Struct
   def ecs_cluster_arn; end
   def ecs_cluster_arn=(_); end
   def self.[](*arg0); end
@@ -708,10 +708,10 @@ class Anonymous_Struct_62 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeregisterEcsClusterRequest < Anonymous_Struct_62
+class Aws::OpsWorks::Types::DeregisterEcsClusterRequest < Anonymous_Struct_64
   include Aws::Structure
 end
-class Anonymous_Struct_63 < Struct
+class Anonymous_Struct_65 < Struct
   def elastic_ip; end
   def elastic_ip=(_); end
   def self.[](*arg0); end
@@ -719,10 +719,10 @@ class Anonymous_Struct_63 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeregisterElasticIpRequest < Anonymous_Struct_63
+class Aws::OpsWorks::Types::DeregisterElasticIpRequest < Anonymous_Struct_65
   include Aws::Structure
 end
-class Anonymous_Struct_64 < Struct
+class Anonymous_Struct_66 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -730,10 +730,10 @@ class Anonymous_Struct_64 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeregisterInstanceRequest < Anonymous_Struct_64
+class Aws::OpsWorks::Types::DeregisterInstanceRequest < Anonymous_Struct_66
   include Aws::Structure
 end
-class Anonymous_Struct_65 < Struct
+class Anonymous_Struct_67 < Struct
   def rds_db_instance_arn; end
   def rds_db_instance_arn=(_); end
   def self.[](*arg0); end
@@ -741,10 +741,10 @@ class Anonymous_Struct_65 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DeregisterRdsDbInstanceRequest < Anonymous_Struct_65
+class Aws::OpsWorks::Types::DeregisterRdsDbInstanceRequest < Anonymous_Struct_67
   include Aws::Structure
 end
-class Anonymous_Struct_66 < Struct
+class Anonymous_Struct_68 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -752,10 +752,10 @@ class Anonymous_Struct_66 < Struct
   def volume_id; end
   def volume_id=(_); end
 end
-class Aws::OpsWorks::Types::DeregisterVolumeRequest < Anonymous_Struct_66
+class Aws::OpsWorks::Types::DeregisterVolumeRequest < Anonymous_Struct_68
   include Aws::Structure
 end
-class Anonymous_Struct_67 < Struct
+class Anonymous_Struct_69 < Struct
   def configuration_manager; end
   def configuration_manager=(_); end
   def self.[](*arg0); end
@@ -765,10 +765,10 @@ class Anonymous_Struct_67 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeAgentVersionsRequest < Anonymous_Struct_67
+class Aws::OpsWorks::Types::DescribeAgentVersionsRequest < Anonymous_Struct_69
   include Aws::Structure
 end
-class Anonymous_Struct_68 < Struct
+class Anonymous_Struct_70 < Struct
   def agent_versions; end
   def agent_versions=(_); end
   def self.[](*arg0); end
@@ -776,10 +776,10 @@ class Anonymous_Struct_68 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeAgentVersionsResult < Anonymous_Struct_68
+class Aws::OpsWorks::Types::DescribeAgentVersionsResult < Anonymous_Struct_70
   include Aws::Structure
 end
-class Anonymous_Struct_69 < Struct
+class Anonymous_Struct_71 < Struct
   def app_ids; end
   def app_ids=(_); end
   def self.[](*arg0); end
@@ -789,10 +789,10 @@ class Anonymous_Struct_69 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeAppsRequest < Anonymous_Struct_69
+class Aws::OpsWorks::Types::DescribeAppsRequest < Anonymous_Struct_71
   include Aws::Structure
 end
-class Anonymous_Struct_70 < Struct
+class Anonymous_Struct_72 < Struct
   def apps; end
   def apps=(_); end
   def self.[](*arg0); end
@@ -800,10 +800,10 @@ class Anonymous_Struct_70 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeAppsResult < Anonymous_Struct_70
+class Aws::OpsWorks::Types::DescribeAppsResult < Anonymous_Struct_72
   include Aws::Structure
 end
-class Anonymous_Struct_71 < Struct
+class Anonymous_Struct_73 < Struct
   def command_ids; end
   def command_ids=(_); end
   def deployment_id; end
@@ -815,10 +815,10 @@ class Anonymous_Struct_71 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeCommandsRequest < Anonymous_Struct_71
+class Aws::OpsWorks::Types::DescribeCommandsRequest < Anonymous_Struct_73
   include Aws::Structure
 end
-class Anonymous_Struct_72 < Struct
+class Anonymous_Struct_74 < Struct
   def commands; end
   def commands=(_); end
   def self.[](*arg0); end
@@ -826,10 +826,10 @@ class Anonymous_Struct_72 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeCommandsResult < Anonymous_Struct_72
+class Aws::OpsWorks::Types::DescribeCommandsResult < Anonymous_Struct_74
   include Aws::Structure
 end
-class Anonymous_Struct_73 < Struct
+class Anonymous_Struct_75 < Struct
   def app_id; end
   def app_id=(_); end
   def deployment_ids; end
@@ -841,10 +841,10 @@ class Anonymous_Struct_73 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeDeploymentsRequest < Anonymous_Struct_73
+class Aws::OpsWorks::Types::DescribeDeploymentsRequest < Anonymous_Struct_75
   include Aws::Structure
 end
-class Anonymous_Struct_74 < Struct
+class Anonymous_Struct_76 < Struct
   def deployments; end
   def deployments=(_); end
   def self.[](*arg0); end
@@ -852,10 +852,10 @@ class Anonymous_Struct_74 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeDeploymentsResult < Anonymous_Struct_74
+class Aws::OpsWorks::Types::DescribeDeploymentsResult < Anonymous_Struct_76
   include Aws::Structure
 end
-class Anonymous_Struct_75 < Struct
+class Anonymous_Struct_77 < Struct
   def ecs_cluster_arns; end
   def ecs_cluster_arns=(_); end
   def max_results; end
@@ -869,10 +869,10 @@ class Anonymous_Struct_75 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeEcsClustersRequest < Anonymous_Struct_75
+class Aws::OpsWorks::Types::DescribeEcsClustersRequest < Anonymous_Struct_77
   include Aws::Structure
 end
-class Anonymous_Struct_76 < Struct
+class Anonymous_Struct_78 < Struct
   def ecs_clusters; end
   def ecs_clusters=(_); end
   def next_token; end
@@ -882,10 +882,10 @@ class Anonymous_Struct_76 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeEcsClustersResult < Anonymous_Struct_76
+class Aws::OpsWorks::Types::DescribeEcsClustersResult < Anonymous_Struct_78
   include Aws::Structure
 end
-class Anonymous_Struct_77 < Struct
+class Anonymous_Struct_79 < Struct
   def instance_id; end
   def instance_id=(_); end
   def ips; end
@@ -897,10 +897,10 @@ class Anonymous_Struct_77 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeElasticIpsRequest < Anonymous_Struct_77
+class Aws::OpsWorks::Types::DescribeElasticIpsRequest < Anonymous_Struct_79
   include Aws::Structure
 end
-class Anonymous_Struct_78 < Struct
+class Anonymous_Struct_80 < Struct
   def elastic_ips; end
   def elastic_ips=(_); end
   def self.[](*arg0); end
@@ -908,10 +908,10 @@ class Anonymous_Struct_78 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeElasticIpsResult < Anonymous_Struct_78
+class Aws::OpsWorks::Types::DescribeElasticIpsResult < Anonymous_Struct_80
   include Aws::Structure
 end
-class Anonymous_Struct_79 < Struct
+class Anonymous_Struct_81 < Struct
   def layer_ids; end
   def layer_ids=(_); end
   def self.[](*arg0); end
@@ -921,10 +921,10 @@ class Anonymous_Struct_79 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeElasticLoadBalancersRequest < Anonymous_Struct_79
+class Aws::OpsWorks::Types::DescribeElasticLoadBalancersRequest < Anonymous_Struct_81
   include Aws::Structure
 end
-class Anonymous_Struct_80 < Struct
+class Anonymous_Struct_82 < Struct
   def elastic_load_balancers; end
   def elastic_load_balancers=(_); end
   def self.[](*arg0); end
@@ -932,10 +932,10 @@ class Anonymous_Struct_80 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeElasticLoadBalancersResult < Anonymous_Struct_80
+class Aws::OpsWorks::Types::DescribeElasticLoadBalancersResult < Anonymous_Struct_82
   include Aws::Structure
 end
-class Anonymous_Struct_81 < Struct
+class Anonymous_Struct_83 < Struct
   def instance_ids; end
   def instance_ids=(_); end
   def layer_id; end
@@ -947,10 +947,10 @@ class Anonymous_Struct_81 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeInstancesRequest < Anonymous_Struct_81
+class Aws::OpsWorks::Types::DescribeInstancesRequest < Anonymous_Struct_83
   include Aws::Structure
 end
-class Anonymous_Struct_82 < Struct
+class Anonymous_Struct_84 < Struct
   def instances; end
   def instances=(_); end
   def self.[](*arg0); end
@@ -958,31 +958,7 @@ class Anonymous_Struct_82 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeInstancesResult < Anonymous_Struct_82
-  include Aws::Structure
-end
-class Anonymous_Struct_83 < Struct
-  def layer_ids; end
-  def layer_ids=(_); end
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-  def stack_id; end
-  def stack_id=(_); end
-end
-class Aws::OpsWorks::Types::DescribeLayersRequest < Anonymous_Struct_83
-  include Aws::Structure
-end
-class Anonymous_Struct_84 < Struct
-  def layers; end
-  def layers=(_); end
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-end
-class Aws::OpsWorks::Types::DescribeLayersResult < Anonymous_Struct_84
+class Aws::OpsWorks::Types::DescribeInstancesResult < Anonymous_Struct_84
   include Aws::Structure
 end
 class Anonymous_Struct_85 < Struct
@@ -992,11 +968,35 @@ class Anonymous_Struct_85 < Struct
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
+  def stack_id; end
+  def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeLoadBasedAutoScalingRequest < Anonymous_Struct_85
+class Aws::OpsWorks::Types::DescribeLayersRequest < Anonymous_Struct_85
   include Aws::Structure
 end
 class Anonymous_Struct_86 < Struct
+  def layers; end
+  def layers=(_); end
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+end
+class Aws::OpsWorks::Types::DescribeLayersResult < Anonymous_Struct_86
+  include Aws::Structure
+end
+class Anonymous_Struct_87 < Struct
+  def layer_ids; end
+  def layer_ids=(_); end
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+end
+class Aws::OpsWorks::Types::DescribeLoadBasedAutoScalingRequest < Anonymous_Struct_87
+  include Aws::Structure
+end
+class Anonymous_Struct_88 < Struct
   def load_based_auto_scaling_configurations; end
   def load_based_auto_scaling_configurations=(_); end
   def self.[](*arg0); end
@@ -1004,10 +1004,10 @@ class Anonymous_Struct_86 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeLoadBasedAutoScalingResult < Anonymous_Struct_86
+class Aws::OpsWorks::Types::DescribeLoadBasedAutoScalingResult < Anonymous_Struct_88
   include Aws::Structure
 end
-class Anonymous_Struct_87 < Struct
+class Anonymous_Struct_89 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -1015,10 +1015,10 @@ class Anonymous_Struct_87 < Struct
   def user_profile; end
   def user_profile=(_); end
 end
-class Aws::OpsWorks::Types::DescribeMyUserProfileResult < Anonymous_Struct_87
+class Aws::OpsWorks::Types::DescribeMyUserProfileResult < Anonymous_Struct_89
   include Aws::Structure
 end
-class Anonymous_Struct_88 < Struct
+class Anonymous_Struct_90 < Struct
   def operating_systems; end
   def operating_systems=(_); end
   def self.[](*arg0); end
@@ -1026,10 +1026,10 @@ class Anonymous_Struct_88 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeOperatingSystemsResponse < Anonymous_Struct_88
+class Aws::OpsWorks::Types::DescribeOperatingSystemsResponse < Anonymous_Struct_90
   include Aws::Structure
 end
-class Anonymous_Struct_89 < Struct
+class Anonymous_Struct_91 < Struct
   def iam_user_arn; end
   def iam_user_arn=(_); end
   def self.[](*arg0); end
@@ -1039,10 +1039,10 @@ class Anonymous_Struct_89 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribePermissionsRequest < Anonymous_Struct_89
+class Aws::OpsWorks::Types::DescribePermissionsRequest < Anonymous_Struct_91
   include Aws::Structure
 end
-class Anonymous_Struct_90 < Struct
+class Anonymous_Struct_92 < Struct
   def permissions; end
   def permissions=(_); end
   def self.[](*arg0); end
@@ -1050,10 +1050,10 @@ class Anonymous_Struct_90 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribePermissionsResult < Anonymous_Struct_90
+class Aws::OpsWorks::Types::DescribePermissionsResult < Anonymous_Struct_92
   include Aws::Structure
 end
-class Anonymous_Struct_91 < Struct
+class Anonymous_Struct_93 < Struct
   def instance_id; end
   def instance_id=(_); end
   def raid_array_ids; end
@@ -1065,10 +1065,10 @@ class Anonymous_Struct_91 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeRaidArraysRequest < Anonymous_Struct_91
+class Aws::OpsWorks::Types::DescribeRaidArraysRequest < Anonymous_Struct_93
   include Aws::Structure
 end
-class Anonymous_Struct_92 < Struct
+class Anonymous_Struct_94 < Struct
   def raid_arrays; end
   def raid_arrays=(_); end
   def self.[](*arg0); end
@@ -1076,10 +1076,10 @@ class Anonymous_Struct_92 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeRaidArraysResult < Anonymous_Struct_92
+class Aws::OpsWorks::Types::DescribeRaidArraysResult < Anonymous_Struct_94
   include Aws::Structure
 end
-class Anonymous_Struct_93 < Struct
+class Anonymous_Struct_95 < Struct
   def rds_db_instance_arns; end
   def rds_db_instance_arns=(_); end
   def self.[](*arg0); end
@@ -1089,10 +1089,10 @@ class Anonymous_Struct_93 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeRdsDbInstancesRequest < Anonymous_Struct_93
+class Aws::OpsWorks::Types::DescribeRdsDbInstancesRequest < Anonymous_Struct_95
   include Aws::Structure
 end
-class Anonymous_Struct_94 < Struct
+class Anonymous_Struct_96 < Struct
   def rds_db_instances; end
   def rds_db_instances=(_); end
   def self.[](*arg0); end
@@ -1100,10 +1100,10 @@ class Anonymous_Struct_94 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeRdsDbInstancesResult < Anonymous_Struct_94
+class Aws::OpsWorks::Types::DescribeRdsDbInstancesResult < Anonymous_Struct_96
   include Aws::Structure
 end
-class Anonymous_Struct_95 < Struct
+class Anonymous_Struct_97 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -1115,10 +1115,10 @@ class Anonymous_Struct_95 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeServiceErrorsRequest < Anonymous_Struct_95
+class Aws::OpsWorks::Types::DescribeServiceErrorsRequest < Anonymous_Struct_97
   include Aws::Structure
 end
-class Anonymous_Struct_96 < Struct
+class Anonymous_Struct_98 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -1126,31 +1126,7 @@ class Anonymous_Struct_96 < Struct
   def service_errors; end
   def service_errors=(_); end
 end
-class Aws::OpsWorks::Types::DescribeServiceErrorsResult < Anonymous_Struct_96
-  include Aws::Structure
-end
-class Anonymous_Struct_97 < Struct
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-  def stack_id; end
-  def stack_id=(_); end
-end
-class Aws::OpsWorks::Types::DescribeStackProvisioningParametersRequest < Anonymous_Struct_97
-  include Aws::Structure
-end
-class Anonymous_Struct_98 < Struct
-  def agent_installer_url; end
-  def agent_installer_url=(_); end
-  def parameters; end
-  def parameters=(_); end
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-end
-class Aws::OpsWorks::Types::DescribeStackProvisioningParametersResult < Anonymous_Struct_98
+class Aws::OpsWorks::Types::DescribeServiceErrorsResult < Anonymous_Struct_98
   include Aws::Structure
 end
 class Anonymous_Struct_99 < Struct
@@ -1161,18 +1137,20 @@ class Anonymous_Struct_99 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeStackSummaryRequest < Anonymous_Struct_99
+class Aws::OpsWorks::Types::DescribeStackProvisioningParametersRequest < Anonymous_Struct_99
   include Aws::Structure
 end
 class Anonymous_Struct_100 < Struct
+  def agent_installer_url; end
+  def agent_installer_url=(_); end
+  def parameters; end
+  def parameters=(_); end
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
-  def stack_summary; end
-  def stack_summary=(_); end
 end
-class Aws::OpsWorks::Types::DescribeStackSummaryResult < Anonymous_Struct_100
+class Aws::OpsWorks::Types::DescribeStackProvisioningParametersResult < Anonymous_Struct_100
   include Aws::Structure
 end
 class Anonymous_Struct_101 < Struct
@@ -1180,10 +1158,10 @@ class Anonymous_Struct_101 < Struct
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
-  def stack_ids; end
-  def stack_ids=(_); end
+  def stack_id; end
+  def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::DescribeStacksRequest < Anonymous_Struct_101
+class Aws::OpsWorks::Types::DescribeStackSummaryRequest < Anonymous_Struct_101
   include Aws::Structure
 end
 class Anonymous_Struct_102 < Struct
@@ -1191,21 +1169,21 @@ class Anonymous_Struct_102 < Struct
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
-  def stacks; end
-  def stacks=(_); end
+  def stack_summary; end
+  def stack_summary=(_); end
 end
-class Aws::OpsWorks::Types::DescribeStacksResult < Anonymous_Struct_102
+class Aws::OpsWorks::Types::DescribeStackSummaryResult < Anonymous_Struct_102
   include Aws::Structure
 end
 class Anonymous_Struct_103 < Struct
-  def instance_ids; end
-  def instance_ids=(_); end
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
+  def stack_ids; end
+  def stack_ids=(_); end
 end
-class Aws::OpsWorks::Types::DescribeTimeBasedAutoScalingRequest < Anonymous_Struct_103
+class Aws::OpsWorks::Types::DescribeStacksRequest < Anonymous_Struct_103
   include Aws::Structure
 end
 class Anonymous_Struct_104 < Struct
@@ -1213,21 +1191,21 @@ class Anonymous_Struct_104 < Struct
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
-  def time_based_auto_scaling_configurations; end
-  def time_based_auto_scaling_configurations=(_); end
+  def stacks; end
+  def stacks=(_); end
 end
-class Aws::OpsWorks::Types::DescribeTimeBasedAutoScalingResult < Anonymous_Struct_104
+class Aws::OpsWorks::Types::DescribeStacksResult < Anonymous_Struct_104
   include Aws::Structure
 end
 class Anonymous_Struct_105 < Struct
-  def iam_user_arns; end
-  def iam_user_arns=(_); end
+  def instance_ids; end
+  def instance_ids=(_); end
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DescribeUserProfilesRequest < Anonymous_Struct_105
+class Aws::OpsWorks::Types::DescribeTimeBasedAutoScalingRequest < Anonymous_Struct_105
   include Aws::Structure
 end
 class Anonymous_Struct_106 < Struct
@@ -1235,13 +1213,35 @@ class Anonymous_Struct_106 < Struct
   def self.inspect; end
   def self.members; end
   def self.new(*arg0); end
-  def user_profiles; end
-  def user_profiles=(_); end
+  def time_based_auto_scaling_configurations; end
+  def time_based_auto_scaling_configurations=(_); end
 end
-class Aws::OpsWorks::Types::DescribeUserProfilesResult < Anonymous_Struct_106
+class Aws::OpsWorks::Types::DescribeTimeBasedAutoScalingResult < Anonymous_Struct_106
   include Aws::Structure
 end
 class Anonymous_Struct_107 < Struct
+  def iam_user_arns; end
+  def iam_user_arns=(_); end
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+end
+class Aws::OpsWorks::Types::DescribeUserProfilesRequest < Anonymous_Struct_107
+  include Aws::Structure
+end
+class Anonymous_Struct_108 < Struct
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+  def user_profiles; end
+  def user_profiles=(_); end
+end
+class Aws::OpsWorks::Types::DescribeUserProfilesResult < Anonymous_Struct_108
+  include Aws::Structure
+end
+class Anonymous_Struct_109 < Struct
   def instance_id; end
   def instance_id=(_); end
   def raid_array_id; end
@@ -1255,10 +1255,10 @@ class Anonymous_Struct_107 < Struct
   def volume_ids; end
   def volume_ids=(_); end
 end
-class Aws::OpsWorks::Types::DescribeVolumesRequest < Anonymous_Struct_107
+class Aws::OpsWorks::Types::DescribeVolumesRequest < Anonymous_Struct_109
   include Aws::Structure
 end
-class Anonymous_Struct_108 < Struct
+class Anonymous_Struct_110 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -1266,10 +1266,10 @@ class Anonymous_Struct_108 < Struct
   def volumes; end
   def volumes=(_); end
 end
-class Aws::OpsWorks::Types::DescribeVolumesResult < Anonymous_Struct_108
+class Aws::OpsWorks::Types::DescribeVolumesResult < Anonymous_Struct_110
   include Aws::Structure
 end
-class Anonymous_Struct_109 < Struct
+class Anonymous_Struct_111 < Struct
   def elastic_load_balancer_name; end
   def elastic_load_balancer_name=(_); end
   def layer_id; end
@@ -1279,10 +1279,10 @@ class Anonymous_Struct_109 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DetachElasticLoadBalancerRequest < Anonymous_Struct_109
+class Aws::OpsWorks::Types::DetachElasticLoadBalancerRequest < Anonymous_Struct_111
   include Aws::Structure
 end
-class Anonymous_Struct_110 < Struct
+class Anonymous_Struct_112 < Struct
   def elastic_ip; end
   def elastic_ip=(_); end
   def self.[](*arg0); end
@@ -1290,10 +1290,10 @@ class Anonymous_Struct_110 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::DisassociateElasticIpRequest < Anonymous_Struct_110
+class Aws::OpsWorks::Types::DisassociateElasticIpRequest < Anonymous_Struct_112
   include Aws::Structure
 end
-class Anonymous_Struct_111 < Struct
+class Anonymous_Struct_113 < Struct
   def delete_on_termination; end
   def delete_on_termination=(_); end
   def iops; end
@@ -1309,10 +1309,10 @@ class Anonymous_Struct_111 < Struct
   def volume_type; end
   def volume_type=(_); end
 end
-class Aws::OpsWorks::Types::EbsBlockDevice < Anonymous_Struct_111
+class Aws::OpsWorks::Types::EbsBlockDevice < Anonymous_Struct_113
   include Aws::Structure
 end
-class Anonymous_Struct_112 < Struct
+class Anonymous_Struct_114 < Struct
   def ecs_cluster_arn; end
   def ecs_cluster_arn=(_); end
   def ecs_cluster_name; end
@@ -1326,10 +1326,10 @@ class Anonymous_Struct_112 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::EcsCluster < Anonymous_Struct_112
+class Aws::OpsWorks::Types::EcsCluster < Anonymous_Struct_114
   include Aws::Structure
 end
-class Anonymous_Struct_113 < Struct
+class Anonymous_Struct_115 < Struct
   def domain; end
   def domain=(_); end
   def instance_id; end
@@ -1345,10 +1345,10 @@ class Anonymous_Struct_113 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::ElasticIp < Anonymous_Struct_113
+class Aws::OpsWorks::Types::ElasticIp < Anonymous_Struct_115
   include Aws::Structure
 end
-class Anonymous_Struct_114 < Struct
+class Anonymous_Struct_116 < Struct
   def availability_zones; end
   def availability_zones=(_); end
   def dns_name; end
@@ -1372,10 +1372,10 @@ class Anonymous_Struct_114 < Struct
   def vpc_id; end
   def vpc_id=(_); end
 end
-class Aws::OpsWorks::Types::ElasticLoadBalancer < Anonymous_Struct_114
+class Aws::OpsWorks::Types::ElasticLoadBalancer < Anonymous_Struct_116
   include Aws::Structure
 end
-class Anonymous_Struct_115 < Struct
+class Anonymous_Struct_117 < Struct
   def key; end
   def key=(_); end
   def secure; end
@@ -1387,10 +1387,10 @@ class Anonymous_Struct_115 < Struct
   def value; end
   def value=(_); end
 end
-class Aws::OpsWorks::Types::EnvironmentVariable < Anonymous_Struct_115
+class Aws::OpsWorks::Types::EnvironmentVariable < Anonymous_Struct_117
   include Aws::Structure
 end
-class Anonymous_Struct_116 < Struct
+class Anonymous_Struct_118 < Struct
   def layer_id; end
   def layer_id=(_); end
   def self.[](*arg0); end
@@ -1398,10 +1398,10 @@ class Anonymous_Struct_116 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::GetHostnameSuggestionRequest < Anonymous_Struct_116
+class Aws::OpsWorks::Types::GetHostnameSuggestionRequest < Anonymous_Struct_118
   include Aws::Structure
 end
-class Anonymous_Struct_117 < Struct
+class Anonymous_Struct_119 < Struct
   def hostname; end
   def hostname=(_); end
   def layer_id; end
@@ -1411,10 +1411,10 @@ class Anonymous_Struct_117 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::GetHostnameSuggestionResult < Anonymous_Struct_117
+class Aws::OpsWorks::Types::GetHostnameSuggestionResult < Anonymous_Struct_119
   include Aws::Structure
 end
-class Anonymous_Struct_118 < Struct
+class Anonymous_Struct_120 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -1424,10 +1424,10 @@ class Anonymous_Struct_118 < Struct
   def valid_for_in_minutes; end
   def valid_for_in_minutes=(_); end
 end
-class Aws::OpsWorks::Types::GrantAccessRequest < Anonymous_Struct_118
+class Aws::OpsWorks::Types::GrantAccessRequest < Anonymous_Struct_120
   include Aws::Structure
 end
-class Anonymous_Struct_119 < Struct
+class Anonymous_Struct_121 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -1435,10 +1435,10 @@ class Anonymous_Struct_119 < Struct
   def temporary_credential; end
   def temporary_credential=(_); end
 end
-class Aws::OpsWorks::Types::GrantAccessResult < Anonymous_Struct_119
+class Aws::OpsWorks::Types::GrantAccessResult < Anonymous_Struct_121
   include Aws::Structure
 end
-class Anonymous_Struct_120 < Struct
+class Anonymous_Struct_122 < Struct
   def agent_version; end
   def agent_version=(_); end
   def ami_id; end
@@ -1526,10 +1526,10 @@ class Anonymous_Struct_120 < Struct
   def virtualization_type; end
   def virtualization_type=(_); end
 end
-class Aws::OpsWorks::Types::Instance < Anonymous_Struct_120
+class Aws::OpsWorks::Types::Instance < Anonymous_Struct_122
   include Aws::Structure
 end
-class Anonymous_Struct_121 < Struct
+class Anonymous_Struct_123 < Struct
   def document; end
   def document=(_); end
   def self.[](*arg0); end
@@ -1539,10 +1539,10 @@ class Anonymous_Struct_121 < Struct
   def signature; end
   def signature=(_); end
 end
-class Aws::OpsWorks::Types::InstanceIdentity < Anonymous_Struct_121
+class Aws::OpsWorks::Types::InstanceIdentity < Anonymous_Struct_123
   include Aws::Structure
 end
-class Anonymous_Struct_122 < Struct
+class Anonymous_Struct_124 < Struct
   def assigning; end
   def assigning=(_); end
   def booting; end
@@ -1588,10 +1588,10 @@ class Anonymous_Struct_122 < Struct
   def unassigning; end
   def unassigning=(_); end
 end
-class Aws::OpsWorks::Types::InstancesCount < Anonymous_Struct_122
+class Aws::OpsWorks::Types::InstancesCount < Anonymous_Struct_124
   include Aws::Structure
 end
-class Anonymous_Struct_123 < Struct
+class Anonymous_Struct_125 < Struct
   def arn; end
   def arn=(_); end
   def attributes; end
@@ -1643,10 +1643,10 @@ class Anonymous_Struct_123 < Struct
   def volume_configurations; end
   def volume_configurations=(_); end
 end
-class Aws::OpsWorks::Types::Layer < Anonymous_Struct_123
+class Aws::OpsWorks::Types::Layer < Anonymous_Struct_125
   include Aws::Structure
 end
-class Anonymous_Struct_124 < Struct
+class Anonymous_Struct_126 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -1654,10 +1654,10 @@ class Anonymous_Struct_124 < Struct
   def shutdown; end
   def shutdown=(_); end
 end
-class Aws::OpsWorks::Types::LifecycleEventConfiguration < Anonymous_Struct_124
+class Aws::OpsWorks::Types::LifecycleEventConfiguration < Anonymous_Struct_126
   include Aws::Structure
 end
-class Anonymous_Struct_125 < Struct
+class Anonymous_Struct_127 < Struct
   def max_results; end
   def max_results=(_); end
   def next_token; end
@@ -1669,10 +1669,10 @@ class Anonymous_Struct_125 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::ListTagsRequest < Anonymous_Struct_125
+class Aws::OpsWorks::Types::ListTagsRequest < Anonymous_Struct_127
   include Aws::Structure
 end
-class Anonymous_Struct_126 < Struct
+class Anonymous_Struct_128 < Struct
   def next_token; end
   def next_token=(_); end
   def self.[](*arg0); end
@@ -1682,10 +1682,10 @@ class Anonymous_Struct_126 < Struct
   def tags; end
   def tags=(_); end
 end
-class Aws::OpsWorks::Types::ListTagsResult < Anonymous_Struct_126
+class Aws::OpsWorks::Types::ListTagsResult < Anonymous_Struct_128
   include Aws::Structure
 end
-class Anonymous_Struct_127 < Struct
+class Anonymous_Struct_129 < Struct
   def down_scaling; end
   def down_scaling=(_); end
   def enable; end
@@ -1699,10 +1699,10 @@ class Anonymous_Struct_127 < Struct
   def up_scaling; end
   def up_scaling=(_); end
 end
-class Aws::OpsWorks::Types::LoadBasedAutoScalingConfiguration < Anonymous_Struct_127
+class Aws::OpsWorks::Types::LoadBasedAutoScalingConfiguration < Anonymous_Struct_129
   include Aws::Structure
 end
-class Anonymous_Struct_128 < Struct
+class Anonymous_Struct_130 < Struct
   def configuration_managers; end
   def configuration_managers=(_); end
   def id; end
@@ -1722,10 +1722,10 @@ class Anonymous_Struct_128 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::OperatingSystem < Anonymous_Struct_128
+class Aws::OpsWorks::Types::OperatingSystem < Anonymous_Struct_130
   include Aws::Structure
 end
-class Anonymous_Struct_129 < Struct
+class Anonymous_Struct_131 < Struct
   def name; end
   def name=(_); end
   def self.[](*arg0); end
@@ -1735,10 +1735,10 @@ class Anonymous_Struct_129 < Struct
   def version; end
   def version=(_); end
 end
-class Aws::OpsWorks::Types::OperatingSystemConfigurationManager < Anonymous_Struct_129
+class Aws::OpsWorks::Types::OperatingSystemConfigurationManager < Anonymous_Struct_131
   include Aws::Structure
 end
-class Anonymous_Struct_130 < Struct
+class Anonymous_Struct_132 < Struct
   def allow_ssh; end
   def allow_ssh=(_); end
   def allow_sudo; end
@@ -1754,10 +1754,10 @@ class Anonymous_Struct_130 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::Permission < Anonymous_Struct_130
+class Aws::OpsWorks::Types::Permission < Anonymous_Struct_132
   include Aws::Structure
 end
-class Anonymous_Struct_131 < Struct
+class Anonymous_Struct_133 < Struct
   def availability_zone; end
   def availability_zone=(_); end
   def created_at; end
@@ -1789,10 +1789,10 @@ class Anonymous_Struct_131 < Struct
   def volume_type; end
   def volume_type=(_); end
 end
-class Aws::OpsWorks::Types::RaidArray < Anonymous_Struct_131
+class Aws::OpsWorks::Types::RaidArray < Anonymous_Struct_133
   include Aws::Structure
 end
-class Anonymous_Struct_132 < Struct
+class Anonymous_Struct_134 < Struct
   def address; end
   def address=(_); end
   def db_instance_identifier; end
@@ -1816,10 +1816,10 @@ class Anonymous_Struct_132 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::RdsDbInstance < Anonymous_Struct_132
+class Aws::OpsWorks::Types::RdsDbInstance < Anonymous_Struct_134
   include Aws::Structure
 end
-class Anonymous_Struct_133 < Struct
+class Anonymous_Struct_135 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -1827,10 +1827,10 @@ class Anonymous_Struct_133 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::RebootInstanceRequest < Anonymous_Struct_133
+class Aws::OpsWorks::Types::RebootInstanceRequest < Anonymous_Struct_135
   include Aws::Structure
 end
-class Anonymous_Struct_134 < Struct
+class Anonymous_Struct_136 < Struct
   def configure; end
   def configure=(_); end
   def deploy; end
@@ -1846,34 +1846,34 @@ class Anonymous_Struct_134 < Struct
   def undeploy; end
   def undeploy=(_); end
 end
-class Aws::OpsWorks::Types::Recipes < Anonymous_Struct_134
-  include Aws::Structure
-end
-class Anonymous_Struct_135 < Struct
-  def ecs_cluster_arn; end
-  def ecs_cluster_arn=(_); end
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-  def stack_id; end
-  def stack_id=(_); end
-end
-class Aws::OpsWorks::Types::RegisterEcsClusterRequest < Anonymous_Struct_135
-  include Aws::Structure
-end
-class Anonymous_Struct_136 < Struct
-  def ecs_cluster_arn; end
-  def ecs_cluster_arn=(_); end
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-end
-class Aws::OpsWorks::Types::RegisterEcsClusterResult < Anonymous_Struct_136
+class Aws::OpsWorks::Types::Recipes < Anonymous_Struct_136
   include Aws::Structure
 end
 class Anonymous_Struct_137 < Struct
+  def ecs_cluster_arn; end
+  def ecs_cluster_arn=(_); end
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+  def stack_id; end
+  def stack_id=(_); end
+end
+class Aws::OpsWorks::Types::RegisterEcsClusterRequest < Anonymous_Struct_137
+  include Aws::Structure
+end
+class Anonymous_Struct_138 < Struct
+  def ecs_cluster_arn; end
+  def ecs_cluster_arn=(_); end
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+end
+class Aws::OpsWorks::Types::RegisterEcsClusterResult < Anonymous_Struct_138
+  include Aws::Structure
+end
+class Anonymous_Struct_139 < Struct
   def elastic_ip; end
   def elastic_ip=(_); end
   def self.[](*arg0); end
@@ -1883,10 +1883,10 @@ class Anonymous_Struct_137 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::RegisterElasticIpRequest < Anonymous_Struct_137
+class Aws::OpsWorks::Types::RegisterElasticIpRequest < Anonymous_Struct_139
   include Aws::Structure
 end
-class Anonymous_Struct_138 < Struct
+class Anonymous_Struct_140 < Struct
   def elastic_ip; end
   def elastic_ip=(_); end
   def self.[](*arg0); end
@@ -1894,10 +1894,10 @@ class Anonymous_Struct_138 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::RegisterElasticIpResult < Anonymous_Struct_138
+class Aws::OpsWorks::Types::RegisterElasticIpResult < Anonymous_Struct_140
   include Aws::Structure
 end
-class Anonymous_Struct_139 < Struct
+class Anonymous_Struct_141 < Struct
   def hostname; end
   def hostname=(_); end
   def instance_identity; end
@@ -1917,10 +1917,10 @@ class Anonymous_Struct_139 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::RegisterInstanceRequest < Anonymous_Struct_139
+class Aws::OpsWorks::Types::RegisterInstanceRequest < Anonymous_Struct_141
   include Aws::Structure
 end
-class Anonymous_Struct_140 < Struct
+class Anonymous_Struct_142 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -1928,10 +1928,10 @@ class Anonymous_Struct_140 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::RegisterInstanceResult < Anonymous_Struct_140
+class Aws::OpsWorks::Types::RegisterInstanceResult < Anonymous_Struct_142
   include Aws::Structure
 end
-class Anonymous_Struct_141 < Struct
+class Anonymous_Struct_143 < Struct
   def db_password; end
   def db_password=(_); end
   def db_user; end
@@ -1945,10 +1945,10 @@ class Anonymous_Struct_141 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::RegisterRdsDbInstanceRequest < Anonymous_Struct_141
+class Aws::OpsWorks::Types::RegisterRdsDbInstanceRequest < Anonymous_Struct_143
   include Aws::Structure
 end
-class Anonymous_Struct_142 < Struct
+class Anonymous_Struct_144 < Struct
   def ec2_volume_id; end
   def ec2_volume_id=(_); end
   def self.[](*arg0); end
@@ -1958,10 +1958,10 @@ class Anonymous_Struct_142 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::RegisterVolumeRequest < Anonymous_Struct_142
+class Aws::OpsWorks::Types::RegisterVolumeRequest < Anonymous_Struct_144
   include Aws::Structure
 end
-class Anonymous_Struct_143 < Struct
+class Anonymous_Struct_145 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -1969,10 +1969,10 @@ class Anonymous_Struct_143 < Struct
   def volume_id; end
   def volume_id=(_); end
 end
-class Aws::OpsWorks::Types::RegisterVolumeResult < Anonymous_Struct_143
+class Aws::OpsWorks::Types::RegisterVolumeResult < Anonymous_Struct_145
   include Aws::Structure
 end
-class Anonymous_Struct_144 < Struct
+class Anonymous_Struct_146 < Struct
   def family; end
   def family=(_); end
   def name; end
@@ -1984,10 +1984,10 @@ class Anonymous_Struct_144 < Struct
   def version; end
   def version=(_); end
 end
-class Aws::OpsWorks::Types::ReportedOs < Anonymous_Struct_144
+class Aws::OpsWorks::Types::ReportedOs < Anonymous_Struct_146
   include Aws::Structure
 end
-class Anonymous_Struct_145 < Struct
+class Anonymous_Struct_147 < Struct
   def message; end
   def message=(_); end
   def self.[](*arg0); end
@@ -1995,10 +1995,10 @@ class Anonymous_Struct_145 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::ResourceNotFoundException < Anonymous_Struct_145
+class Aws::OpsWorks::Types::ResourceNotFoundException < Anonymous_Struct_147
   include Aws::Structure
 end
-class Anonymous_Struct_146 < Struct
+class Anonymous_Struct_148 < Struct
   def iam_user_arn; end
   def iam_user_arn=(_); end
   def name; end
@@ -2012,10 +2012,10 @@ class Anonymous_Struct_146 < Struct
   def ssh_username; end
   def ssh_username=(_); end
 end
-class Aws::OpsWorks::Types::SelfUserProfile < Anonymous_Struct_146
+class Aws::OpsWorks::Types::SelfUserProfile < Anonymous_Struct_148
   include Aws::Structure
 end
-class Anonymous_Struct_147 < Struct
+class Anonymous_Struct_149 < Struct
   def created_at; end
   def created_at=(_); end
   def instance_id; end
@@ -2033,10 +2033,10 @@ class Anonymous_Struct_147 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::ServiceError < Anonymous_Struct_147
+class Aws::OpsWorks::Types::ServiceError < Anonymous_Struct_149
   include Aws::Structure
 end
-class Anonymous_Struct_148 < Struct
+class Anonymous_Struct_150 < Struct
   def down_scaling; end
   def down_scaling=(_); end
   def enable; end
@@ -2050,10 +2050,10 @@ class Anonymous_Struct_148 < Struct
   def up_scaling; end
   def up_scaling=(_); end
 end
-class Aws::OpsWorks::Types::SetLoadBasedAutoScalingRequest < Anonymous_Struct_148
+class Aws::OpsWorks::Types::SetLoadBasedAutoScalingRequest < Anonymous_Struct_150
   include Aws::Structure
 end
-class Anonymous_Struct_149 < Struct
+class Anonymous_Struct_151 < Struct
   def allow_ssh; end
   def allow_ssh=(_); end
   def allow_sudo; end
@@ -2069,10 +2069,10 @@ class Anonymous_Struct_149 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::SetPermissionRequest < Anonymous_Struct_149
+class Aws::OpsWorks::Types::SetPermissionRequest < Anonymous_Struct_151
   include Aws::Structure
 end
-class Anonymous_Struct_150 < Struct
+class Anonymous_Struct_152 < Struct
   def auto_scaling_schedule; end
   def auto_scaling_schedule=(_); end
   def instance_id; end
@@ -2082,10 +2082,10 @@ class Anonymous_Struct_150 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::SetTimeBasedAutoScalingRequest < Anonymous_Struct_150
+class Aws::OpsWorks::Types::SetTimeBasedAutoScalingRequest < Anonymous_Struct_152
   include Aws::Structure
 end
-class Anonymous_Struct_151 < Struct
+class Anonymous_Struct_153 < Struct
   def delay_until_elb_connections_drained; end
   def delay_until_elb_connections_drained=(_); end
   def execution_timeout; end
@@ -2095,10 +2095,10 @@ class Anonymous_Struct_151 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::ShutdownEventConfiguration < Anonymous_Struct_151
+class Aws::OpsWorks::Types::ShutdownEventConfiguration < Anonymous_Struct_153
   include Aws::Structure
 end
-class Anonymous_Struct_152 < Struct
+class Anonymous_Struct_154 < Struct
   def password; end
   def password=(_); end
   def revision; end
@@ -2116,10 +2116,10 @@ class Anonymous_Struct_152 < Struct
   def username; end
   def username=(_); end
 end
-class Aws::OpsWorks::Types::Source < Anonymous_Struct_152
+class Aws::OpsWorks::Types::Source < Anonymous_Struct_154
   include Aws::Structure
 end
-class Anonymous_Struct_153 < Struct
+class Anonymous_Struct_155 < Struct
   def certificate; end
   def certificate=(_); end
   def chain; end
@@ -2131,10 +2131,10 @@ class Anonymous_Struct_153 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::SslConfiguration < Anonymous_Struct_153
+class Aws::OpsWorks::Types::SslConfiguration < Anonymous_Struct_155
   include Aws::Structure
 end
-class Anonymous_Struct_154 < Struct
+class Anonymous_Struct_156 < Struct
   def agent_version; end
   def agent_version=(_); end
   def arn; end
@@ -2184,10 +2184,10 @@ class Anonymous_Struct_154 < Struct
   def vpc_id; end
   def vpc_id=(_); end
 end
-class Aws::OpsWorks::Types::Stack < Anonymous_Struct_154
+class Aws::OpsWorks::Types::Stack < Anonymous_Struct_156
   include Aws::Structure
 end
-class Anonymous_Struct_155 < Struct
+class Anonymous_Struct_157 < Struct
   def name; end
   def name=(_); end
   def self.[](*arg0); end
@@ -2197,10 +2197,10 @@ class Anonymous_Struct_155 < Struct
   def version; end
   def version=(_); end
 end
-class Aws::OpsWorks::Types::StackConfigurationManager < Anonymous_Struct_155
+class Aws::OpsWorks::Types::StackConfigurationManager < Anonymous_Struct_157
   include Aws::Structure
 end
-class Anonymous_Struct_156 < Struct
+class Anonymous_Struct_158 < Struct
   def apps_count; end
   def apps_count=(_); end
   def arn; end
@@ -2218,34 +2218,10 @@ class Anonymous_Struct_156 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::StackSummary < Anonymous_Struct_156
-  include Aws::Structure
-end
-class Anonymous_Struct_157 < Struct
-  def instance_id; end
-  def instance_id=(_); end
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-end
-class Aws::OpsWorks::Types::StartInstanceRequest < Anonymous_Struct_157
-  include Aws::Structure
-end
-class Anonymous_Struct_158 < Struct
-  def self.[](*arg0); end
-  def self.inspect; end
-  def self.members; end
-  def self.new(*arg0); end
-  def stack_id; end
-  def stack_id=(_); end
-end
-class Aws::OpsWorks::Types::StartStackRequest < Anonymous_Struct_158
+class Aws::OpsWorks::Types::StackSummary < Anonymous_Struct_158
   include Aws::Structure
 end
 class Anonymous_Struct_159 < Struct
-  def force; end
-  def force=(_); end
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -2253,7 +2229,7 @@ class Anonymous_Struct_159 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::StopInstanceRequest < Anonymous_Struct_159
+class Aws::OpsWorks::Types::StartInstanceRequest < Anonymous_Struct_159
   include Aws::Structure
 end
 class Anonymous_Struct_160 < Struct
@@ -2264,10 +2240,34 @@ class Anonymous_Struct_160 < Struct
   def stack_id; end
   def stack_id=(_); end
 end
-class Aws::OpsWorks::Types::StopStackRequest < Anonymous_Struct_160
+class Aws::OpsWorks::Types::StartStackRequest < Anonymous_Struct_160
   include Aws::Structure
 end
 class Anonymous_Struct_161 < Struct
+  def force; end
+  def force=(_); end
+  def instance_id; end
+  def instance_id=(_); end
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+end
+class Aws::OpsWorks::Types::StopInstanceRequest < Anonymous_Struct_161
+  include Aws::Structure
+end
+class Anonymous_Struct_162 < Struct
+  def self.[](*arg0); end
+  def self.inspect; end
+  def self.members; end
+  def self.new(*arg0); end
+  def stack_id; end
+  def stack_id=(_); end
+end
+class Aws::OpsWorks::Types::StopStackRequest < Anonymous_Struct_162
+  include Aws::Structure
+end
+class Anonymous_Struct_163 < Struct
   def resource_arn; end
   def resource_arn=(_); end
   def self.[](*arg0); end
@@ -2277,10 +2277,10 @@ class Anonymous_Struct_161 < Struct
   def tags; end
   def tags=(_); end
 end
-class Aws::OpsWorks::Types::TagResourceRequest < Anonymous_Struct_161
+class Aws::OpsWorks::Types::TagResourceRequest < Anonymous_Struct_163
   include Aws::Structure
 end
-class Anonymous_Struct_162 < Struct
+class Anonymous_Struct_164 < Struct
   def instance_id; end
   def instance_id=(_); end
   def password; end
@@ -2294,10 +2294,10 @@ class Anonymous_Struct_162 < Struct
   def valid_for_in_minutes; end
   def valid_for_in_minutes=(_); end
 end
-class Aws::OpsWorks::Types::TemporaryCredential < Anonymous_Struct_162
+class Aws::OpsWorks::Types::TemporaryCredential < Anonymous_Struct_164
   include Aws::Structure
 end
-class Anonymous_Struct_163 < Struct
+class Anonymous_Struct_165 < Struct
   def auto_scaling_schedule; end
   def auto_scaling_schedule=(_); end
   def instance_id; end
@@ -2307,10 +2307,10 @@ class Anonymous_Struct_163 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::TimeBasedAutoScalingConfiguration < Anonymous_Struct_163
+class Aws::OpsWorks::Types::TimeBasedAutoScalingConfiguration < Anonymous_Struct_165
   include Aws::Structure
 end
-class Anonymous_Struct_164 < Struct
+class Anonymous_Struct_166 < Struct
   def instance_id; end
   def instance_id=(_); end
   def self.[](*arg0); end
@@ -2318,10 +2318,10 @@ class Anonymous_Struct_164 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::UnassignInstanceRequest < Anonymous_Struct_164
+class Aws::OpsWorks::Types::UnassignInstanceRequest < Anonymous_Struct_166
   include Aws::Structure
 end
-class Anonymous_Struct_165 < Struct
+class Anonymous_Struct_167 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -2329,10 +2329,10 @@ class Anonymous_Struct_165 < Struct
   def volume_id; end
   def volume_id=(_); end
 end
-class Aws::OpsWorks::Types::UnassignVolumeRequest < Anonymous_Struct_165
+class Aws::OpsWorks::Types::UnassignVolumeRequest < Anonymous_Struct_167
   include Aws::Structure
 end
-class Anonymous_Struct_166 < Struct
+class Anonymous_Struct_168 < Struct
   def resource_arn; end
   def resource_arn=(_); end
   def self.[](*arg0); end
@@ -2342,10 +2342,10 @@ class Anonymous_Struct_166 < Struct
   def tag_keys; end
   def tag_keys=(_); end
 end
-class Aws::OpsWorks::Types::UntagResourceRequest < Anonymous_Struct_166
+class Aws::OpsWorks::Types::UntagResourceRequest < Anonymous_Struct_168
   include Aws::Structure
 end
-class Anonymous_Struct_167 < Struct
+class Anonymous_Struct_169 < Struct
   def app_id; end
   def app_id=(_); end
   def app_source; end
@@ -2373,10 +2373,10 @@ class Anonymous_Struct_167 < Struct
   def type; end
   def type=(_); end
 end
-class Aws::OpsWorks::Types::UpdateAppRequest < Anonymous_Struct_167
+class Aws::OpsWorks::Types::UpdateAppRequest < Anonymous_Struct_169
   include Aws::Structure
 end
-class Anonymous_Struct_168 < Struct
+class Anonymous_Struct_170 < Struct
   def elastic_ip; end
   def elastic_ip=(_); end
   def name; end
@@ -2386,10 +2386,10 @@ class Anonymous_Struct_168 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::UpdateElasticIpRequest < Anonymous_Struct_168
+class Aws::OpsWorks::Types::UpdateElasticIpRequest < Anonymous_Struct_170
   include Aws::Structure
 end
-class Anonymous_Struct_169 < Struct
+class Anonymous_Struct_171 < Struct
   def agent_version; end
   def agent_version=(_); end
   def ami_id; end
@@ -2419,10 +2419,10 @@ class Anonymous_Struct_169 < Struct
   def ssh_key_name; end
   def ssh_key_name=(_); end
 end
-class Aws::OpsWorks::Types::UpdateInstanceRequest < Anonymous_Struct_169
+class Aws::OpsWorks::Types::UpdateInstanceRequest < Anonymous_Struct_171
   include Aws::Structure
 end
-class Anonymous_Struct_170 < Struct
+class Anonymous_Struct_172 < Struct
   def attributes; end
   def attributes=(_); end
   def auto_assign_elastic_ips; end
@@ -2462,10 +2462,10 @@ class Anonymous_Struct_170 < Struct
   def volume_configurations; end
   def volume_configurations=(_); end
 end
-class Aws::OpsWorks::Types::UpdateLayerRequest < Anonymous_Struct_170
+class Aws::OpsWorks::Types::UpdateLayerRequest < Anonymous_Struct_172
   include Aws::Structure
 end
-class Anonymous_Struct_171 < Struct
+class Anonymous_Struct_173 < Struct
   def self.[](*arg0); end
   def self.inspect; end
   def self.members; end
@@ -2473,10 +2473,10 @@ class Anonymous_Struct_171 < Struct
   def ssh_public_key; end
   def ssh_public_key=(_); end
 end
-class Aws::OpsWorks::Types::UpdateMyUserProfileRequest < Anonymous_Struct_171
+class Aws::OpsWorks::Types::UpdateMyUserProfileRequest < Anonymous_Struct_173
   include Aws::Structure
 end
-class Anonymous_Struct_172 < Struct
+class Anonymous_Struct_174 < Struct
   def db_password; end
   def db_password=(_); end
   def db_user; end
@@ -2488,10 +2488,10 @@ class Anonymous_Struct_172 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::UpdateRdsDbInstanceRequest < Anonymous_Struct_172
+class Aws::OpsWorks::Types::UpdateRdsDbInstanceRequest < Anonymous_Struct_174
   include Aws::Structure
 end
-class Anonymous_Struct_173 < Struct
+class Anonymous_Struct_175 < Struct
   def agent_version; end
   def agent_version=(_); end
   def attributes; end
@@ -2533,10 +2533,10 @@ class Anonymous_Struct_173 < Struct
   def use_opsworks_security_groups; end
   def use_opsworks_security_groups=(_); end
 end
-class Aws::OpsWorks::Types::UpdateStackRequest < Anonymous_Struct_173
+class Aws::OpsWorks::Types::UpdateStackRequest < Anonymous_Struct_175
   include Aws::Structure
 end
-class Anonymous_Struct_174 < Struct
+class Anonymous_Struct_176 < Struct
   def allow_self_management; end
   def allow_self_management=(_); end
   def iam_user_arn; end
@@ -2550,10 +2550,10 @@ class Anonymous_Struct_174 < Struct
   def ssh_username; end
   def ssh_username=(_); end
 end
-class Aws::OpsWorks::Types::UpdateUserProfileRequest < Anonymous_Struct_174
+class Aws::OpsWorks::Types::UpdateUserProfileRequest < Anonymous_Struct_176
   include Aws::Structure
 end
-class Anonymous_Struct_175 < Struct
+class Anonymous_Struct_177 < Struct
   def mount_point; end
   def mount_point=(_); end
   def name; end
@@ -2565,10 +2565,10 @@ class Anonymous_Struct_175 < Struct
   def volume_id; end
   def volume_id=(_); end
 end
-class Aws::OpsWorks::Types::UpdateVolumeRequest < Anonymous_Struct_175
+class Aws::OpsWorks::Types::UpdateVolumeRequest < Anonymous_Struct_177
   include Aws::Structure
 end
-class Anonymous_Struct_176 < Struct
+class Anonymous_Struct_178 < Struct
   def allow_self_management; end
   def allow_self_management=(_); end
   def iam_user_arn; end
@@ -2584,10 +2584,10 @@ class Anonymous_Struct_176 < Struct
   def ssh_username; end
   def ssh_username=(_); end
 end
-class Aws::OpsWorks::Types::UserProfile < Anonymous_Struct_176
+class Aws::OpsWorks::Types::UserProfile < Anonymous_Struct_178
   include Aws::Structure
 end
-class Anonymous_Struct_177 < Struct
+class Anonymous_Struct_179 < Struct
   def message; end
   def message=(_); end
   def self.[](*arg0); end
@@ -2595,10 +2595,10 @@ class Anonymous_Struct_177 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Aws::OpsWorks::Types::ValidationException < Anonymous_Struct_177
+class Aws::OpsWorks::Types::ValidationException < Anonymous_Struct_179
   include Aws::Structure
 end
-class Anonymous_Struct_178 < Struct
+class Anonymous_Struct_180 < Struct
   def availability_zone; end
   def availability_zone=(_); end
   def device; end
@@ -2632,10 +2632,10 @@ class Anonymous_Struct_178 < Struct
   def volume_type; end
   def volume_type=(_); end
 end
-class Aws::OpsWorks::Types::Volume < Anonymous_Struct_178
+class Aws::OpsWorks::Types::Volume < Anonymous_Struct_180
   include Aws::Structure
 end
-class Anonymous_Struct_179 < Struct
+class Anonymous_Struct_181 < Struct
   def encrypted; end
   def encrypted=(_); end
   def iops; end
@@ -2655,10 +2655,10 @@ class Anonymous_Struct_179 < Struct
   def volume_type; end
   def volume_type=(_); end
 end
-class Aws::OpsWorks::Types::VolumeConfiguration < Anonymous_Struct_179
+class Aws::OpsWorks::Types::VolumeConfiguration < Anonymous_Struct_181
   include Aws::Structure
 end
-class Anonymous_Struct_180 < Struct
+class Anonymous_Struct_182 < Struct
   def friday; end
   def friday=(_); end
   def monday; end
@@ -2678,7 +2678,7 @@ class Anonymous_Struct_180 < Struct
   def wednesday; end
   def wednesday=(_); end
 end
-class Aws::OpsWorks::Types::WeeklyAutoScalingSchedule < Anonymous_Struct_180
+class Aws::OpsWorks::Types::WeeklyAutoScalingSchedule < Anonymous_Struct_182
   include Aws::Structure
 end
 module Aws::OpsWorks::ClientApi
