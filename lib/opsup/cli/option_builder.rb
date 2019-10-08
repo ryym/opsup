@@ -11,7 +11,7 @@ module Opsup
         new
       end
 
-      DEFAULT_OPSWORKS_REGION = 'ap-northeast-1'
+      DEFAULT_AWS_REGION = 'ap-northeast-1'
 
       sig { params(parser: OptionParser).returns(OptionParser) }
       def define_options(parser)
@@ -19,7 +19,9 @@ module Opsup
           p.on('-s', '--stack STACK_NAME', 'target stack name')
           p.on('-m', '--mode MODE', Opsup::Config::MODES.join(' | ').to_s)
           p.on('--aws-cred KEY_ID,SECRET_KEY', 'AWS credentials')
-          p.on('--opsworks-region REGION', "default: #{DEFAULT_OPSWORKS_REGION}")
+          p.on('--opsworks-region REGION', "default: #{DEFAULT_AWS_REGION}")
+          p.on('--cookbook-url URL', 'URL of cookbook to upload')
+          p.on('--s3-bucket NAME', 'S3 bucket name for cookbooks')
           p.on('-d', '--dryrun')
         end
       end
@@ -35,6 +37,8 @@ module Opsup
           %w[mode MODE],
           %w[aws-cred AWS_CRED],
           %w[opsworks-region OPSWORKS_REGION],
+          %w[cookbook-url COOKBOOK_URL],
+          %w[s3-bucket S3_BUCKET],
           %w[dryrun DRYRUN],
         ].each_with_object({}) do |(key, env_key), obj|
           value = env_vars["OPSUP_#{env_key}"]
@@ -60,7 +64,10 @@ module Opsup
           stack_name: options[:stack],
           aws_access_key_id: aws_key_id,
           aws_secret_access_key: aws_secret,
-          opsworks_region: options[:"opsworks-region"] || DEFAULT_OPSWORKS_REGION,
+          opsworks_region: options[:"opsworks-region"] || DEFAULT_AWS_REGION,
+          cookbook_url: options[:"cookbook-url"],
+          s3_bucket_name: options[:"s3-bucket"],
+          s3_region: options[:"s3-region"] || DEFAULT_AWS_REGION,
           running_mode: mode,
           dryrun: options[:dryrun] || false,
         )
