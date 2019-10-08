@@ -73,15 +73,177 @@ end
 
 module Aws::Json
   ENGINE_DUMP_OPTIONS = ::T.let(nil, ::T.untyped)
+  ENGINE_ERRORS = ::T.let(nil, ::T.untyped)
   ENGINE_LOAD_OPTIONS = ::T.let(nil, ::T.untyped)
 end
 
 Aws::Json::ENGINE = JSON
 
-Aws::Json::ENGINE_ERROR = JSON::ParserError
-
 class Aws::Json::Handler
   CONTENT_TYPE = ::T.let(nil, ::T.untyped)
+end
+
+module Aws::KMS
+  GEM_VERSION = ::T.let(nil, ::T.untyped)
+end
+
+module Aws::KMS::ClientApi
+  API = ::T.let(nil, ::T.untyped)
+  AWSAccountIdType = ::T.let(nil, ::T.untyped)
+  AlgorithmSpec = ::T.let(nil, ::T.untyped)
+  AliasList = ::T.let(nil, ::T.untyped)
+  AliasListEntry = ::T.let(nil, ::T.untyped)
+  AliasNameType = ::T.let(nil, ::T.untyped)
+  AlreadyExistsException = ::T.let(nil, ::T.untyped)
+  ArnType = ::T.let(nil, ::T.untyped)
+  BooleanType = ::T.let(nil, ::T.untyped)
+  CancelKeyDeletionRequest = ::T.let(nil, ::T.untyped)
+  CancelKeyDeletionResponse = ::T.let(nil, ::T.untyped)
+  CiphertextType = ::T.let(nil, ::T.untyped)
+  CloudHsmClusterIdType = ::T.let(nil, ::T.untyped)
+  CloudHsmClusterInUseException = ::T.let(nil, ::T.untyped)
+  CloudHsmClusterInvalidConfigurationException = ::T.let(nil, ::T.untyped)
+  CloudHsmClusterNotActiveException = ::T.let(nil, ::T.untyped)
+  CloudHsmClusterNotFoundException = ::T.let(nil, ::T.untyped)
+  CloudHsmClusterNotRelatedException = ::T.let(nil, ::T.untyped)
+  ConnectCustomKeyStoreRequest = ::T.let(nil, ::T.untyped)
+  ConnectCustomKeyStoreResponse = ::T.let(nil, ::T.untyped)
+  ConnectionErrorCodeType = ::T.let(nil, ::T.untyped)
+  ConnectionStateType = ::T.let(nil, ::T.untyped)
+  CreateAliasRequest = ::T.let(nil, ::T.untyped)
+  CreateCustomKeyStoreRequest = ::T.let(nil, ::T.untyped)
+  CreateCustomKeyStoreResponse = ::T.let(nil, ::T.untyped)
+  CreateGrantRequest = ::T.let(nil, ::T.untyped)
+  CreateGrantResponse = ::T.let(nil, ::T.untyped)
+  CreateKeyRequest = ::T.let(nil, ::T.untyped)
+  CreateKeyResponse = ::T.let(nil, ::T.untyped)
+  CustomKeyStoreHasCMKsException = ::T.let(nil, ::T.untyped)
+  CustomKeyStoreIdType = ::T.let(nil, ::T.untyped)
+  CustomKeyStoreInvalidStateException = ::T.let(nil, ::T.untyped)
+  CustomKeyStoreNameInUseException = ::T.let(nil, ::T.untyped)
+  CustomKeyStoreNameType = ::T.let(nil, ::T.untyped)
+  CustomKeyStoreNotFoundException = ::T.let(nil, ::T.untyped)
+  CustomKeyStoresList = ::T.let(nil, ::T.untyped)
+  CustomKeyStoresListEntry = ::T.let(nil, ::T.untyped)
+  DataKeySpec = ::T.let(nil, ::T.untyped)
+  DateType = ::T.let(nil, ::T.untyped)
+  DecryptRequest = ::T.let(nil, ::T.untyped)
+  DecryptResponse = ::T.let(nil, ::T.untyped)
+  DeleteAliasRequest = ::T.let(nil, ::T.untyped)
+  DeleteCustomKeyStoreRequest = ::T.let(nil, ::T.untyped)
+  DeleteCustomKeyStoreResponse = ::T.let(nil, ::T.untyped)
+  DeleteImportedKeyMaterialRequest = ::T.let(nil, ::T.untyped)
+  DependencyTimeoutException = ::T.let(nil, ::T.untyped)
+  DescribeCustomKeyStoresRequest = ::T.let(nil, ::T.untyped)
+  DescribeCustomKeyStoresResponse = ::T.let(nil, ::T.untyped)
+  DescribeKeyRequest = ::T.let(nil, ::T.untyped)
+  DescribeKeyResponse = ::T.let(nil, ::T.untyped)
+  DescriptionType = ::T.let(nil, ::T.untyped)
+  DisableKeyRequest = ::T.let(nil, ::T.untyped)
+  DisableKeyRotationRequest = ::T.let(nil, ::T.untyped)
+  DisabledException = ::T.let(nil, ::T.untyped)
+  DisconnectCustomKeyStoreRequest = ::T.let(nil, ::T.untyped)
+  DisconnectCustomKeyStoreResponse = ::T.let(nil, ::T.untyped)
+  EnableKeyRequest = ::T.let(nil, ::T.untyped)
+  EnableKeyRotationRequest = ::T.let(nil, ::T.untyped)
+  EncryptRequest = ::T.let(nil, ::T.untyped)
+  EncryptResponse = ::T.let(nil, ::T.untyped)
+  EncryptionContextKey = ::T.let(nil, ::T.untyped)
+  EncryptionContextType = ::T.let(nil, ::T.untyped)
+  EncryptionContextValue = ::T.let(nil, ::T.untyped)
+  ErrorMessageType = ::T.let(nil, ::T.untyped)
+  ExpirationModelType = ::T.let(nil, ::T.untyped)
+  ExpiredImportTokenException = ::T.let(nil, ::T.untyped)
+  GenerateDataKeyRequest = ::T.let(nil, ::T.untyped)
+  GenerateDataKeyResponse = ::T.let(nil, ::T.untyped)
+  GenerateDataKeyWithoutPlaintextRequest = ::T.let(nil, ::T.untyped)
+  GenerateDataKeyWithoutPlaintextResponse = ::T.let(nil, ::T.untyped)
+  GenerateRandomRequest = ::T.let(nil, ::T.untyped)
+  GenerateRandomResponse = ::T.let(nil, ::T.untyped)
+  GetKeyPolicyRequest = ::T.let(nil, ::T.untyped)
+  GetKeyPolicyResponse = ::T.let(nil, ::T.untyped)
+  GetKeyRotationStatusRequest = ::T.let(nil, ::T.untyped)
+  GetKeyRotationStatusResponse = ::T.let(nil, ::T.untyped)
+  GetParametersForImportRequest = ::T.let(nil, ::T.untyped)
+  GetParametersForImportResponse = ::T.let(nil, ::T.untyped)
+  GrantConstraints = ::T.let(nil, ::T.untyped)
+  GrantIdType = ::T.let(nil, ::T.untyped)
+  GrantList = ::T.let(nil, ::T.untyped)
+  GrantListEntry = ::T.let(nil, ::T.untyped)
+  GrantNameType = ::T.let(nil, ::T.untyped)
+  GrantOperation = ::T.let(nil, ::T.untyped)
+  GrantOperationList = ::T.let(nil, ::T.untyped)
+  GrantTokenList = ::T.let(nil, ::T.untyped)
+  GrantTokenType = ::T.let(nil, ::T.untyped)
+  ImportKeyMaterialRequest = ::T.let(nil, ::T.untyped)
+  ImportKeyMaterialResponse = ::T.let(nil, ::T.untyped)
+  IncorrectKeyMaterialException = ::T.let(nil, ::T.untyped)
+  IncorrectTrustAnchorException = ::T.let(nil, ::T.untyped)
+  InvalidAliasNameException = ::T.let(nil, ::T.untyped)
+  InvalidArnException = ::T.let(nil, ::T.untyped)
+  InvalidCiphertextException = ::T.let(nil, ::T.untyped)
+  InvalidGrantIdException = ::T.let(nil, ::T.untyped)
+  InvalidGrantTokenException = ::T.let(nil, ::T.untyped)
+  InvalidImportTokenException = ::T.let(nil, ::T.untyped)
+  InvalidKeyUsageException = ::T.let(nil, ::T.untyped)
+  InvalidMarkerException = ::T.let(nil, ::T.untyped)
+  KMSInternalException = ::T.let(nil, ::T.untyped)
+  KMSInvalidStateException = ::T.let(nil, ::T.untyped)
+  KeyIdType = ::T.let(nil, ::T.untyped)
+  KeyList = ::T.let(nil, ::T.untyped)
+  KeyListEntry = ::T.let(nil, ::T.untyped)
+  KeyManagerType = ::T.let(nil, ::T.untyped)
+  KeyMetadata = ::T.let(nil, ::T.untyped)
+  KeyState = ::T.let(nil, ::T.untyped)
+  KeyStorePasswordType = ::T.let(nil, ::T.untyped)
+  KeyUnavailableException = ::T.let(nil, ::T.untyped)
+  KeyUsageType = ::T.let(nil, ::T.untyped)
+  LimitExceededException = ::T.let(nil, ::T.untyped)
+  LimitType = ::T.let(nil, ::T.untyped)
+  ListAliasesRequest = ::T.let(nil, ::T.untyped)
+  ListAliasesResponse = ::T.let(nil, ::T.untyped)
+  ListGrantsRequest = ::T.let(nil, ::T.untyped)
+  ListGrantsResponse = ::T.let(nil, ::T.untyped)
+  ListKeyPoliciesRequest = ::T.let(nil, ::T.untyped)
+  ListKeyPoliciesResponse = ::T.let(nil, ::T.untyped)
+  ListKeysRequest = ::T.let(nil, ::T.untyped)
+  ListKeysResponse = ::T.let(nil, ::T.untyped)
+  ListResourceTagsRequest = ::T.let(nil, ::T.untyped)
+  ListResourceTagsResponse = ::T.let(nil, ::T.untyped)
+  ListRetirableGrantsRequest = ::T.let(nil, ::T.untyped)
+  MalformedPolicyDocumentException = ::T.let(nil, ::T.untyped)
+  MarkerType = ::T.let(nil, ::T.untyped)
+  NotFoundException = ::T.let(nil, ::T.untyped)
+  NumberOfBytesType = ::T.let(nil, ::T.untyped)
+  OriginType = ::T.let(nil, ::T.untyped)
+  PendingWindowInDaysType = ::T.let(nil, ::T.untyped)
+  PlaintextType = ::T.let(nil, ::T.untyped)
+  PolicyNameList = ::T.let(nil, ::T.untyped)
+  PolicyNameType = ::T.let(nil, ::T.untyped)
+  PolicyType = ::T.let(nil, ::T.untyped)
+  PrincipalIdType = ::T.let(nil, ::T.untyped)
+  PutKeyPolicyRequest = ::T.let(nil, ::T.untyped)
+  ReEncryptRequest = ::T.let(nil, ::T.untyped)
+  ReEncryptResponse = ::T.let(nil, ::T.untyped)
+  RetireGrantRequest = ::T.let(nil, ::T.untyped)
+  RevokeGrantRequest = ::T.let(nil, ::T.untyped)
+  ScheduleKeyDeletionRequest = ::T.let(nil, ::T.untyped)
+  ScheduleKeyDeletionResponse = ::T.let(nil, ::T.untyped)
+  Tag = ::T.let(nil, ::T.untyped)
+  TagException = ::T.let(nil, ::T.untyped)
+  TagKeyList = ::T.let(nil, ::T.untyped)
+  TagKeyType = ::T.let(nil, ::T.untyped)
+  TagList = ::T.let(nil, ::T.untyped)
+  TagResourceRequest = ::T.let(nil, ::T.untyped)
+  TagValueType = ::T.let(nil, ::T.untyped)
+  TrustAnchorCertificateType = ::T.let(nil, ::T.untyped)
+  UnsupportedOperationException = ::T.let(nil, ::T.untyped)
+  UntagResourceRequest = ::T.let(nil, ::T.untyped)
+  UpdateAliasRequest = ::T.let(nil, ::T.untyped)
+  UpdateCustomKeyStoreRequest = ::T.let(nil, ::T.untyped)
+  UpdateCustomKeyStoreResponse = ::T.let(nil, ::T.untyped)
+  UpdateKeyDescriptionRequest = ::T.let(nil, ::T.untyped)
+  WrappingKeySpec = ::T.let(nil, ::T.untyped)
 end
 
 class Aws::Log::ParamFilter
@@ -348,6 +510,589 @@ class Aws::Query::Handler
   METADATA_REF = ::T.let(nil, ::T.untyped)
 end
 
+module Aws::S3
+  BUCKET_REGIONS = ::T.let(nil, ::T.untyped)
+  GEM_VERSION = ::T.let(nil, ::T.untyped)
+end
+
+module Aws::S3::ClientApi
+  API = ::T.let(nil, ::T.untyped)
+  AbortDate = ::T.let(nil, ::T.untyped)
+  AbortIncompleteMultipartUpload = ::T.let(nil, ::T.untyped)
+  AbortMultipartUploadOutput = ::T.let(nil, ::T.untyped)
+  AbortMultipartUploadRequest = ::T.let(nil, ::T.untyped)
+  AbortRuleId = ::T.let(nil, ::T.untyped)
+  AccelerateConfiguration = ::T.let(nil, ::T.untyped)
+  AcceptRanges = ::T.let(nil, ::T.untyped)
+  AccessControlPolicy = ::T.let(nil, ::T.untyped)
+  AccessControlTranslation = ::T.let(nil, ::T.untyped)
+  AccountId = ::T.let(nil, ::T.untyped)
+  AllowQuotedRecordDelimiter = ::T.let(nil, ::T.untyped)
+  AllowedHeader = ::T.let(nil, ::T.untyped)
+  AllowedHeaders = ::T.let(nil, ::T.untyped)
+  AllowedMethod = ::T.let(nil, ::T.untyped)
+  AllowedMethods = ::T.let(nil, ::T.untyped)
+  AllowedOrigin = ::T.let(nil, ::T.untyped)
+  AllowedOrigins = ::T.let(nil, ::T.untyped)
+  AnalyticsAndOperator = ::T.let(nil, ::T.untyped)
+  AnalyticsConfiguration = ::T.let(nil, ::T.untyped)
+  AnalyticsConfigurationList = ::T.let(nil, ::T.untyped)
+  AnalyticsExportDestination = ::T.let(nil, ::T.untyped)
+  AnalyticsFilter = ::T.let(nil, ::T.untyped)
+  AnalyticsId = ::T.let(nil, ::T.untyped)
+  AnalyticsS3BucketDestination = ::T.let(nil, ::T.untyped)
+  AnalyticsS3ExportFileFormat = ::T.let(nil, ::T.untyped)
+  Body = ::T.let(nil, ::T.untyped)
+  Bucket = ::T.let(nil, ::T.untyped)
+  BucketAccelerateStatus = ::T.let(nil, ::T.untyped)
+  BucketAlreadyExists = ::T.let(nil, ::T.untyped)
+  BucketAlreadyOwnedByYou = ::T.let(nil, ::T.untyped)
+  BucketCannedACL = ::T.let(nil, ::T.untyped)
+  BucketLifecycleConfiguration = ::T.let(nil, ::T.untyped)
+  BucketLocationConstraint = ::T.let(nil, ::T.untyped)
+  BucketLoggingStatus = ::T.let(nil, ::T.untyped)
+  BucketLogsPermission = ::T.let(nil, ::T.untyped)
+  BucketName = ::T.let(nil, ::T.untyped)
+  BucketVersioningStatus = ::T.let(nil, ::T.untyped)
+  Buckets = ::T.let(nil, ::T.untyped)
+  BypassGovernanceRetention = ::T.let(nil, ::T.untyped)
+  BytesProcessed = ::T.let(nil, ::T.untyped)
+  BytesReturned = ::T.let(nil, ::T.untyped)
+  BytesScanned = ::T.let(nil, ::T.untyped)
+  CORSConfiguration = ::T.let(nil, ::T.untyped)
+  CORSRule = ::T.let(nil, ::T.untyped)
+  CORSRules = ::T.let(nil, ::T.untyped)
+  CSVInput = ::T.let(nil, ::T.untyped)
+  CSVOutput = ::T.let(nil, ::T.untyped)
+  CacheControl = ::T.let(nil, ::T.untyped)
+  CloudFunction = ::T.let(nil, ::T.untyped)
+  CloudFunctionConfiguration = ::T.let(nil, ::T.untyped)
+  CloudFunctionInvocationRole = ::T.let(nil, ::T.untyped)
+  Code = ::T.let(nil, ::T.untyped)
+  Comments = ::T.let(nil, ::T.untyped)
+  CommonPrefix = ::T.let(nil, ::T.untyped)
+  CommonPrefixList = ::T.let(nil, ::T.untyped)
+  CompleteMultipartUploadOutput = ::T.let(nil, ::T.untyped)
+  CompleteMultipartUploadRequest = ::T.let(nil, ::T.untyped)
+  CompletedMultipartUpload = ::T.let(nil, ::T.untyped)
+  CompletedPart = ::T.let(nil, ::T.untyped)
+  CompletedPartList = ::T.let(nil, ::T.untyped)
+  CompressionType = ::T.let(nil, ::T.untyped)
+  Condition = ::T.let(nil, ::T.untyped)
+  ConfirmRemoveSelfBucketAccess = ::T.let(nil, ::T.untyped)
+  ContentDisposition = ::T.let(nil, ::T.untyped)
+  ContentEncoding = ::T.let(nil, ::T.untyped)
+  ContentLanguage = ::T.let(nil, ::T.untyped)
+  ContentLength = ::T.let(nil, ::T.untyped)
+  ContentMD5 = ::T.let(nil, ::T.untyped)
+  ContentRange = ::T.let(nil, ::T.untyped)
+  ContentType = ::T.let(nil, ::T.untyped)
+  ContinuationEvent = ::T.let(nil, ::T.untyped)
+  CopyObjectOutput = ::T.let(nil, ::T.untyped)
+  CopyObjectRequest = ::T.let(nil, ::T.untyped)
+  CopyObjectResult = ::T.let(nil, ::T.untyped)
+  CopyPartResult = ::T.let(nil, ::T.untyped)
+  CopySource = ::T.let(nil, ::T.untyped)
+  CopySourceIfMatch = ::T.let(nil, ::T.untyped)
+  CopySourceIfModifiedSince = ::T.let(nil, ::T.untyped)
+  CopySourceIfNoneMatch = ::T.let(nil, ::T.untyped)
+  CopySourceIfUnmodifiedSince = ::T.let(nil, ::T.untyped)
+  CopySourceRange = ::T.let(nil, ::T.untyped)
+  CopySourceSSECustomerAlgorithm = ::T.let(nil, ::T.untyped)
+  CopySourceSSECustomerKey = ::T.let(nil, ::T.untyped)
+  CopySourceSSECustomerKeyMD5 = ::T.let(nil, ::T.untyped)
+  CopySourceVersionId = ::T.let(nil, ::T.untyped)
+  CreateBucketConfiguration = ::T.let(nil, ::T.untyped)
+  CreateBucketOutput = ::T.let(nil, ::T.untyped)
+  CreateBucketRequest = ::T.let(nil, ::T.untyped)
+  CreateMultipartUploadOutput = ::T.let(nil, ::T.untyped)
+  CreateMultipartUploadRequest = ::T.let(nil, ::T.untyped)
+  CreationDate = ::T.let(nil, ::T.untyped)
+  Date = ::T.let(nil, ::T.untyped)
+  Days = ::T.let(nil, ::T.untyped)
+  DaysAfterInitiation = ::T.let(nil, ::T.untyped)
+  DefaultRetention = ::T.let(nil, ::T.untyped)
+  Delete = ::T.let(nil, ::T.untyped)
+  DeleteBucketAnalyticsConfigurationRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketCorsRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketEncryptionRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketInventoryConfigurationRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketLifecycleRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketMetricsConfigurationRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketPolicyRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketReplicationRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketTaggingRequest = ::T.let(nil, ::T.untyped)
+  DeleteBucketWebsiteRequest = ::T.let(nil, ::T.untyped)
+  DeleteMarker = ::T.let(nil, ::T.untyped)
+  DeleteMarkerEntry = ::T.let(nil, ::T.untyped)
+  DeleteMarkerReplication = ::T.let(nil, ::T.untyped)
+  DeleteMarkerReplicationStatus = ::T.let(nil, ::T.untyped)
+  DeleteMarkerVersionId = ::T.let(nil, ::T.untyped)
+  DeleteMarkers = ::T.let(nil, ::T.untyped)
+  DeleteObjectOutput = ::T.let(nil, ::T.untyped)
+  DeleteObjectRequest = ::T.let(nil, ::T.untyped)
+  DeleteObjectTaggingOutput = ::T.let(nil, ::T.untyped)
+  DeleteObjectTaggingRequest = ::T.let(nil, ::T.untyped)
+  DeleteObjectsOutput = ::T.let(nil, ::T.untyped)
+  DeleteObjectsRequest = ::T.let(nil, ::T.untyped)
+  DeletePublicAccessBlockRequest = ::T.let(nil, ::T.untyped)
+  DeletedObject = ::T.let(nil, ::T.untyped)
+  DeletedObjects = ::T.let(nil, ::T.untyped)
+  Delimiter = ::T.let(nil, ::T.untyped)
+  Description = ::T.let(nil, ::T.untyped)
+  Destination = ::T.let(nil, ::T.untyped)
+  DisplayName = ::T.let(nil, ::T.untyped)
+  ETag = ::T.let(nil, ::T.untyped)
+  EmailAddress = ::T.let(nil, ::T.untyped)
+  EnableRequestProgress = ::T.let(nil, ::T.untyped)
+  EncodingType = ::T.let(nil, ::T.untyped)
+  Encryption = ::T.let(nil, ::T.untyped)
+  EncryptionConfiguration = ::T.let(nil, ::T.untyped)
+  EndEvent = ::T.let(nil, ::T.untyped)
+  Error = ::T.let(nil, ::T.untyped)
+  ErrorDocument = ::T.let(nil, ::T.untyped)
+  Errors = ::T.let(nil, ::T.untyped)
+  Event = ::T.let(nil, ::T.untyped)
+  EventList = ::T.let(nil, ::T.untyped)
+  Expiration = ::T.let(nil, ::T.untyped)
+  ExpirationStatus = ::T.let(nil, ::T.untyped)
+  ExpiredObjectDeleteMarker = ::T.let(nil, ::T.untyped)
+  Expires = ::T.let(nil, ::T.untyped)
+  ExpiresString = ::T.let(nil, ::T.untyped)
+  ExposeHeader = ::T.let(nil, ::T.untyped)
+  ExposeHeaders = ::T.let(nil, ::T.untyped)
+  Expression = ::T.let(nil, ::T.untyped)
+  ExpressionType = ::T.let(nil, ::T.untyped)
+  FetchOwner = ::T.let(nil, ::T.untyped)
+  FieldDelimiter = ::T.let(nil, ::T.untyped)
+  FileHeaderInfo = ::T.let(nil, ::T.untyped)
+  FilterRule = ::T.let(nil, ::T.untyped)
+  FilterRuleList = ::T.let(nil, ::T.untyped)
+  FilterRuleName = ::T.let(nil, ::T.untyped)
+  FilterRuleValue = ::T.let(nil, ::T.untyped)
+  GetBucketAccelerateConfigurationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketAccelerateConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketAclOutput = ::T.let(nil, ::T.untyped)
+  GetBucketAclRequest = ::T.let(nil, ::T.untyped)
+  GetBucketAnalyticsConfigurationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketAnalyticsConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketCorsOutput = ::T.let(nil, ::T.untyped)
+  GetBucketCorsRequest = ::T.let(nil, ::T.untyped)
+  GetBucketEncryptionOutput = ::T.let(nil, ::T.untyped)
+  GetBucketEncryptionRequest = ::T.let(nil, ::T.untyped)
+  GetBucketInventoryConfigurationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketInventoryConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketLifecycleConfigurationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketLifecycleConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketLifecycleOutput = ::T.let(nil, ::T.untyped)
+  GetBucketLifecycleRequest = ::T.let(nil, ::T.untyped)
+  GetBucketLocationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketLocationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketLoggingOutput = ::T.let(nil, ::T.untyped)
+  GetBucketLoggingRequest = ::T.let(nil, ::T.untyped)
+  GetBucketMetricsConfigurationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketMetricsConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketNotificationConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketPolicyOutput = ::T.let(nil, ::T.untyped)
+  GetBucketPolicyRequest = ::T.let(nil, ::T.untyped)
+  GetBucketPolicyStatusOutput = ::T.let(nil, ::T.untyped)
+  GetBucketPolicyStatusRequest = ::T.let(nil, ::T.untyped)
+  GetBucketReplicationOutput = ::T.let(nil, ::T.untyped)
+  GetBucketReplicationRequest = ::T.let(nil, ::T.untyped)
+  GetBucketRequestPaymentOutput = ::T.let(nil, ::T.untyped)
+  GetBucketRequestPaymentRequest = ::T.let(nil, ::T.untyped)
+  GetBucketTaggingOutput = ::T.let(nil, ::T.untyped)
+  GetBucketTaggingRequest = ::T.let(nil, ::T.untyped)
+  GetBucketVersioningOutput = ::T.let(nil, ::T.untyped)
+  GetBucketVersioningRequest = ::T.let(nil, ::T.untyped)
+  GetBucketWebsiteOutput = ::T.let(nil, ::T.untyped)
+  GetBucketWebsiteRequest = ::T.let(nil, ::T.untyped)
+  GetObjectAclOutput = ::T.let(nil, ::T.untyped)
+  GetObjectAclRequest = ::T.let(nil, ::T.untyped)
+  GetObjectLegalHoldOutput = ::T.let(nil, ::T.untyped)
+  GetObjectLegalHoldRequest = ::T.let(nil, ::T.untyped)
+  GetObjectLockConfigurationOutput = ::T.let(nil, ::T.untyped)
+  GetObjectLockConfigurationRequest = ::T.let(nil, ::T.untyped)
+  GetObjectOutput = ::T.let(nil, ::T.untyped)
+  GetObjectRequest = ::T.let(nil, ::T.untyped)
+  GetObjectRetentionOutput = ::T.let(nil, ::T.untyped)
+  GetObjectRetentionRequest = ::T.let(nil, ::T.untyped)
+  GetObjectTaggingOutput = ::T.let(nil, ::T.untyped)
+  GetObjectTaggingRequest = ::T.let(nil, ::T.untyped)
+  GetObjectTorrentOutput = ::T.let(nil, ::T.untyped)
+  GetObjectTorrentRequest = ::T.let(nil, ::T.untyped)
+  GetPublicAccessBlockOutput = ::T.let(nil, ::T.untyped)
+  GetPublicAccessBlockRequest = ::T.let(nil, ::T.untyped)
+  GlacierJobParameters = ::T.let(nil, ::T.untyped)
+  Grant = ::T.let(nil, ::T.untyped)
+  GrantFullControl = ::T.let(nil, ::T.untyped)
+  GrantRead = ::T.let(nil, ::T.untyped)
+  GrantReadACP = ::T.let(nil, ::T.untyped)
+  GrantWrite = ::T.let(nil, ::T.untyped)
+  GrantWriteACP = ::T.let(nil, ::T.untyped)
+  Grantee = ::T.let(nil, ::T.untyped)
+  Grants = ::T.let(nil, ::T.untyped)
+  HeadBucketRequest = ::T.let(nil, ::T.untyped)
+  HeadObjectOutput = ::T.let(nil, ::T.untyped)
+  HeadObjectRequest = ::T.let(nil, ::T.untyped)
+  HostName = ::T.let(nil, ::T.untyped)
+  HttpErrorCodeReturnedEquals = ::T.let(nil, ::T.untyped)
+  HttpRedirectCode = ::T.let(nil, ::T.untyped)
+  ID = ::T.let(nil, ::T.untyped)
+  IfMatch = ::T.let(nil, ::T.untyped)
+  IfModifiedSince = ::T.let(nil, ::T.untyped)
+  IfNoneMatch = ::T.let(nil, ::T.untyped)
+  IfUnmodifiedSince = ::T.let(nil, ::T.untyped)
+  IndexDocument = ::T.let(nil, ::T.untyped)
+  Initiated = ::T.let(nil, ::T.untyped)
+  Initiator = ::T.let(nil, ::T.untyped)
+  InputSerialization = ::T.let(nil, ::T.untyped)
+  InventoryConfiguration = ::T.let(nil, ::T.untyped)
+  InventoryConfigurationList = ::T.let(nil, ::T.untyped)
+  InventoryDestination = ::T.let(nil, ::T.untyped)
+  InventoryEncryption = ::T.let(nil, ::T.untyped)
+  InventoryFilter = ::T.let(nil, ::T.untyped)
+  InventoryFormat = ::T.let(nil, ::T.untyped)
+  InventoryFrequency = ::T.let(nil, ::T.untyped)
+  InventoryId = ::T.let(nil, ::T.untyped)
+  InventoryIncludedObjectVersions = ::T.let(nil, ::T.untyped)
+  InventoryOptionalField = ::T.let(nil, ::T.untyped)
+  InventoryOptionalFields = ::T.let(nil, ::T.untyped)
+  InventoryS3BucketDestination = ::T.let(nil, ::T.untyped)
+  InventorySchedule = ::T.let(nil, ::T.untyped)
+  IsEnabled = ::T.let(nil, ::T.untyped)
+  IsLatest = ::T.let(nil, ::T.untyped)
+  IsPublic = ::T.let(nil, ::T.untyped)
+  IsTruncated = ::T.let(nil, ::T.untyped)
+  JSONInput = ::T.let(nil, ::T.untyped)
+  JSONOutput = ::T.let(nil, ::T.untyped)
+  JSONType = ::T.let(nil, ::T.untyped)
+  KMSContext = ::T.let(nil, ::T.untyped)
+  KeyCount = ::T.let(nil, ::T.untyped)
+  KeyMarker = ::T.let(nil, ::T.untyped)
+  KeyPrefixEquals = ::T.let(nil, ::T.untyped)
+  LambdaFunctionArn = ::T.let(nil, ::T.untyped)
+  LambdaFunctionConfiguration = ::T.let(nil, ::T.untyped)
+  LambdaFunctionConfigurationList = ::T.let(nil, ::T.untyped)
+  LastModified = ::T.let(nil, ::T.untyped)
+  LifecycleConfiguration = ::T.let(nil, ::T.untyped)
+  LifecycleExpiration = ::T.let(nil, ::T.untyped)
+  LifecycleRule = ::T.let(nil, ::T.untyped)
+  LifecycleRuleAndOperator = ::T.let(nil, ::T.untyped)
+  LifecycleRuleFilter = ::T.let(nil, ::T.untyped)
+  LifecycleRules = ::T.let(nil, ::T.untyped)
+  ListBucketAnalyticsConfigurationsOutput = ::T.let(nil, ::T.untyped)
+  ListBucketAnalyticsConfigurationsRequest = ::T.let(nil, ::T.untyped)
+  ListBucketInventoryConfigurationsOutput = ::T.let(nil, ::T.untyped)
+  ListBucketInventoryConfigurationsRequest = ::T.let(nil, ::T.untyped)
+  ListBucketMetricsConfigurationsOutput = ::T.let(nil, ::T.untyped)
+  ListBucketMetricsConfigurationsRequest = ::T.let(nil, ::T.untyped)
+  ListBucketsOutput = ::T.let(nil, ::T.untyped)
+  ListMultipartUploadsOutput = ::T.let(nil, ::T.untyped)
+  ListMultipartUploadsRequest = ::T.let(nil, ::T.untyped)
+  ListObjectVersionsOutput = ::T.let(nil, ::T.untyped)
+  ListObjectVersionsRequest = ::T.let(nil, ::T.untyped)
+  ListObjectsOutput = ::T.let(nil, ::T.untyped)
+  ListObjectsRequest = ::T.let(nil, ::T.untyped)
+  ListObjectsV2Output = ::T.let(nil, ::T.untyped)
+  ListObjectsV2Request = ::T.let(nil, ::T.untyped)
+  ListPartsOutput = ::T.let(nil, ::T.untyped)
+  ListPartsRequest = ::T.let(nil, ::T.untyped)
+  Location = ::T.let(nil, ::T.untyped)
+  LocationPrefix = ::T.let(nil, ::T.untyped)
+  LoggingEnabled = ::T.let(nil, ::T.untyped)
+  MFA = ::T.let(nil, ::T.untyped)
+  MFADelete = ::T.let(nil, ::T.untyped)
+  MFADeleteStatus = ::T.let(nil, ::T.untyped)
+  Marker = ::T.let(nil, ::T.untyped)
+  MaxAgeSeconds = ::T.let(nil, ::T.untyped)
+  MaxKeys = ::T.let(nil, ::T.untyped)
+  MaxParts = ::T.let(nil, ::T.untyped)
+  MaxUploads = ::T.let(nil, ::T.untyped)
+  Message = ::T.let(nil, ::T.untyped)
+  Metadata = ::T.let(nil, ::T.untyped)
+  MetadataDirective = ::T.let(nil, ::T.untyped)
+  MetadataEntry = ::T.let(nil, ::T.untyped)
+  MetadataKey = ::T.let(nil, ::T.untyped)
+  MetadataValue = ::T.let(nil, ::T.untyped)
+  MetricsAndOperator = ::T.let(nil, ::T.untyped)
+  MetricsConfiguration = ::T.let(nil, ::T.untyped)
+  MetricsConfigurationList = ::T.let(nil, ::T.untyped)
+  MetricsFilter = ::T.let(nil, ::T.untyped)
+  MetricsId = ::T.let(nil, ::T.untyped)
+  MissingMeta = ::T.let(nil, ::T.untyped)
+  MultipartUpload = ::T.let(nil, ::T.untyped)
+  MultipartUploadId = ::T.let(nil, ::T.untyped)
+  MultipartUploadList = ::T.let(nil, ::T.untyped)
+  NextKeyMarker = ::T.let(nil, ::T.untyped)
+  NextMarker = ::T.let(nil, ::T.untyped)
+  NextPartNumberMarker = ::T.let(nil, ::T.untyped)
+  NextToken = ::T.let(nil, ::T.untyped)
+  NextUploadIdMarker = ::T.let(nil, ::T.untyped)
+  NextVersionIdMarker = ::T.let(nil, ::T.untyped)
+  NoSuchBucket = ::T.let(nil, ::T.untyped)
+  NoSuchKey = ::T.let(nil, ::T.untyped)
+  NoSuchUpload = ::T.let(nil, ::T.untyped)
+  NoncurrentVersionExpiration = ::T.let(nil, ::T.untyped)
+  NoncurrentVersionTransition = ::T.let(nil, ::T.untyped)
+  NoncurrentVersionTransitionList = ::T.let(nil, ::T.untyped)
+  NotificationConfiguration = ::T.let(nil, ::T.untyped)
+  NotificationConfigurationDeprecated = ::T.let(nil, ::T.untyped)
+  NotificationConfigurationFilter = ::T.let(nil, ::T.untyped)
+  NotificationId = ::T.let(nil, ::T.untyped)
+  Object = ::T.let(nil, ::T.untyped)
+  ObjectAlreadyInActiveTierError = ::T.let(nil, ::T.untyped)
+  ObjectCannedACL = ::T.let(nil, ::T.untyped)
+  ObjectIdentifier = ::T.let(nil, ::T.untyped)
+  ObjectIdentifierList = ::T.let(nil, ::T.untyped)
+  ObjectKey = ::T.let(nil, ::T.untyped)
+  ObjectList = ::T.let(nil, ::T.untyped)
+  ObjectLockConfiguration = ::T.let(nil, ::T.untyped)
+  ObjectLockEnabled = ::T.let(nil, ::T.untyped)
+  ObjectLockEnabledForBucket = ::T.let(nil, ::T.untyped)
+  ObjectLockLegalHold = ::T.let(nil, ::T.untyped)
+  ObjectLockLegalHoldStatus = ::T.let(nil, ::T.untyped)
+  ObjectLockMode = ::T.let(nil, ::T.untyped)
+  ObjectLockRetainUntilDate = ::T.let(nil, ::T.untyped)
+  ObjectLockRetention = ::T.let(nil, ::T.untyped)
+  ObjectLockRetentionMode = ::T.let(nil, ::T.untyped)
+  ObjectLockRule = ::T.let(nil, ::T.untyped)
+  ObjectLockToken = ::T.let(nil, ::T.untyped)
+  ObjectNotInActiveTierError = ::T.let(nil, ::T.untyped)
+  ObjectStorageClass = ::T.let(nil, ::T.untyped)
+  ObjectVersion = ::T.let(nil, ::T.untyped)
+  ObjectVersionId = ::T.let(nil, ::T.untyped)
+  ObjectVersionList = ::T.let(nil, ::T.untyped)
+  ObjectVersionStorageClass = ::T.let(nil, ::T.untyped)
+  OutputLocation = ::T.let(nil, ::T.untyped)
+  OutputSerialization = ::T.let(nil, ::T.untyped)
+  Owner = ::T.let(nil, ::T.untyped)
+  OwnerOverride = ::T.let(nil, ::T.untyped)
+  ParquetInput = ::T.let(nil, ::T.untyped)
+  Part = ::T.let(nil, ::T.untyped)
+  PartNumber = ::T.let(nil, ::T.untyped)
+  PartNumberMarker = ::T.let(nil, ::T.untyped)
+  Parts = ::T.let(nil, ::T.untyped)
+  PartsCount = ::T.let(nil, ::T.untyped)
+  Payer = ::T.let(nil, ::T.untyped)
+  Permission = ::T.let(nil, ::T.untyped)
+  Policy = ::T.let(nil, ::T.untyped)
+  PolicyStatus = ::T.let(nil, ::T.untyped)
+  Prefix = ::T.let(nil, ::T.untyped)
+  Priority = ::T.let(nil, ::T.untyped)
+  Progress = ::T.let(nil, ::T.untyped)
+  ProgressEvent = ::T.let(nil, ::T.untyped)
+  Protocol = ::T.let(nil, ::T.untyped)
+  PublicAccessBlockConfiguration = ::T.let(nil, ::T.untyped)
+  PutBucketAccelerateConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketAclRequest = ::T.let(nil, ::T.untyped)
+  PutBucketAnalyticsConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketCorsRequest = ::T.let(nil, ::T.untyped)
+  PutBucketEncryptionRequest = ::T.let(nil, ::T.untyped)
+  PutBucketInventoryConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketLifecycleConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketLifecycleRequest = ::T.let(nil, ::T.untyped)
+  PutBucketLoggingRequest = ::T.let(nil, ::T.untyped)
+  PutBucketMetricsConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketNotificationConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketNotificationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketPolicyRequest = ::T.let(nil, ::T.untyped)
+  PutBucketReplicationRequest = ::T.let(nil, ::T.untyped)
+  PutBucketRequestPaymentRequest = ::T.let(nil, ::T.untyped)
+  PutBucketTaggingRequest = ::T.let(nil, ::T.untyped)
+  PutBucketVersioningRequest = ::T.let(nil, ::T.untyped)
+  PutBucketWebsiteRequest = ::T.let(nil, ::T.untyped)
+  PutObjectAclOutput = ::T.let(nil, ::T.untyped)
+  PutObjectAclRequest = ::T.let(nil, ::T.untyped)
+  PutObjectLegalHoldOutput = ::T.let(nil, ::T.untyped)
+  PutObjectLegalHoldRequest = ::T.let(nil, ::T.untyped)
+  PutObjectLockConfigurationOutput = ::T.let(nil, ::T.untyped)
+  PutObjectLockConfigurationRequest = ::T.let(nil, ::T.untyped)
+  PutObjectOutput = ::T.let(nil, ::T.untyped)
+  PutObjectRequest = ::T.let(nil, ::T.untyped)
+  PutObjectRetentionOutput = ::T.let(nil, ::T.untyped)
+  PutObjectRetentionRequest = ::T.let(nil, ::T.untyped)
+  PutObjectTaggingOutput = ::T.let(nil, ::T.untyped)
+  PutObjectTaggingRequest = ::T.let(nil, ::T.untyped)
+  PutPublicAccessBlockRequest = ::T.let(nil, ::T.untyped)
+  QueueArn = ::T.let(nil, ::T.untyped)
+  QueueConfiguration = ::T.let(nil, ::T.untyped)
+  QueueConfigurationDeprecated = ::T.let(nil, ::T.untyped)
+  QueueConfigurationList = ::T.let(nil, ::T.untyped)
+  Quiet = ::T.let(nil, ::T.untyped)
+  QuoteCharacter = ::T.let(nil, ::T.untyped)
+  QuoteEscapeCharacter = ::T.let(nil, ::T.untyped)
+  QuoteFields = ::T.let(nil, ::T.untyped)
+  Range = ::T.let(nil, ::T.untyped)
+  RecordDelimiter = ::T.let(nil, ::T.untyped)
+  RecordsEvent = ::T.let(nil, ::T.untyped)
+  Redirect = ::T.let(nil, ::T.untyped)
+  RedirectAllRequestsTo = ::T.let(nil, ::T.untyped)
+  ReplaceKeyPrefixWith = ::T.let(nil, ::T.untyped)
+  ReplaceKeyWith = ::T.let(nil, ::T.untyped)
+  ReplicaKmsKeyID = ::T.let(nil, ::T.untyped)
+  ReplicationConfiguration = ::T.let(nil, ::T.untyped)
+  ReplicationRule = ::T.let(nil, ::T.untyped)
+  ReplicationRuleAndOperator = ::T.let(nil, ::T.untyped)
+  ReplicationRuleFilter = ::T.let(nil, ::T.untyped)
+  ReplicationRuleStatus = ::T.let(nil, ::T.untyped)
+  ReplicationRules = ::T.let(nil, ::T.untyped)
+  ReplicationStatus = ::T.let(nil, ::T.untyped)
+  RequestCharged = ::T.let(nil, ::T.untyped)
+  RequestPayer = ::T.let(nil, ::T.untyped)
+  RequestPaymentConfiguration = ::T.let(nil, ::T.untyped)
+  RequestProgress = ::T.let(nil, ::T.untyped)
+  ResponseCacheControl = ::T.let(nil, ::T.untyped)
+  ResponseContentDisposition = ::T.let(nil, ::T.untyped)
+  ResponseContentEncoding = ::T.let(nil, ::T.untyped)
+  ResponseContentLanguage = ::T.let(nil, ::T.untyped)
+  ResponseContentType = ::T.let(nil, ::T.untyped)
+  ResponseExpires = ::T.let(nil, ::T.untyped)
+  Restore = ::T.let(nil, ::T.untyped)
+  RestoreObjectOutput = ::T.let(nil, ::T.untyped)
+  RestoreObjectRequest = ::T.let(nil, ::T.untyped)
+  RestoreOutputPath = ::T.let(nil, ::T.untyped)
+  RestoreRequest = ::T.let(nil, ::T.untyped)
+  RestoreRequestType = ::T.let(nil, ::T.untyped)
+  Role = ::T.let(nil, ::T.untyped)
+  RoutingRule = ::T.let(nil, ::T.untyped)
+  RoutingRules = ::T.let(nil, ::T.untyped)
+  Rule = ::T.let(nil, ::T.untyped)
+  Rules = ::T.let(nil, ::T.untyped)
+  S3KeyFilter = ::T.let(nil, ::T.untyped)
+  S3Location = ::T.let(nil, ::T.untyped)
+  SSECustomerAlgorithm = ::T.let(nil, ::T.untyped)
+  SSECustomerKey = ::T.let(nil, ::T.untyped)
+  SSECustomerKeyMD5 = ::T.let(nil, ::T.untyped)
+  SSEKMS = ::T.let(nil, ::T.untyped)
+  SSEKMSEncryptionContext = ::T.let(nil, ::T.untyped)
+  SSEKMSKeyId = ::T.let(nil, ::T.untyped)
+  SSES3 = ::T.let(nil, ::T.untyped)
+  SelectObjectContentEventStream = ::T.let(nil, ::T.untyped)
+  SelectObjectContentOutput = ::T.let(nil, ::T.untyped)
+  SelectObjectContentRequest = ::T.let(nil, ::T.untyped)
+  SelectParameters = ::T.let(nil, ::T.untyped)
+  ServerSideEncryption = ::T.let(nil, ::T.untyped)
+  ServerSideEncryptionByDefault = ::T.let(nil, ::T.untyped)
+  ServerSideEncryptionConfiguration = ::T.let(nil, ::T.untyped)
+  ServerSideEncryptionRule = ::T.let(nil, ::T.untyped)
+  ServerSideEncryptionRules = ::T.let(nil, ::T.untyped)
+  Setting = ::T.let(nil, ::T.untyped)
+  Size = ::T.let(nil, ::T.untyped)
+  SourceSelectionCriteria = ::T.let(nil, ::T.untyped)
+  SseKmsEncryptedObjects = ::T.let(nil, ::T.untyped)
+  SseKmsEncryptedObjectsStatus = ::T.let(nil, ::T.untyped)
+  StartAfter = ::T.let(nil, ::T.untyped)
+  Stats = ::T.let(nil, ::T.untyped)
+  StatsEvent = ::T.let(nil, ::T.untyped)
+  StorageClass = ::T.let(nil, ::T.untyped)
+  StorageClassAnalysis = ::T.let(nil, ::T.untyped)
+  StorageClassAnalysisDataExport = ::T.let(nil, ::T.untyped)
+  StorageClassAnalysisSchemaVersion = ::T.let(nil, ::T.untyped)
+  Suffix = ::T.let(nil, ::T.untyped)
+  Tag = ::T.let(nil, ::T.untyped)
+  TagCount = ::T.let(nil, ::T.untyped)
+  TagSet = ::T.let(nil, ::T.untyped)
+  Tagging = ::T.let(nil, ::T.untyped)
+  TaggingDirective = ::T.let(nil, ::T.untyped)
+  TaggingHeader = ::T.let(nil, ::T.untyped)
+  TargetBucket = ::T.let(nil, ::T.untyped)
+  TargetGrant = ::T.let(nil, ::T.untyped)
+  TargetGrants = ::T.let(nil, ::T.untyped)
+  TargetPrefix = ::T.let(nil, ::T.untyped)
+  Tier = ::T.let(nil, ::T.untyped)
+  Token = ::T.let(nil, ::T.untyped)
+  TopicArn = ::T.let(nil, ::T.untyped)
+  TopicConfiguration = ::T.let(nil, ::T.untyped)
+  TopicConfigurationDeprecated = ::T.let(nil, ::T.untyped)
+  TopicConfigurationList = ::T.let(nil, ::T.untyped)
+  Transition = ::T.let(nil, ::T.untyped)
+  TransitionList = ::T.let(nil, ::T.untyped)
+  TransitionStorageClass = ::T.let(nil, ::T.untyped)
+  Type = ::T.let(nil, ::T.untyped)
+  URI = ::T.let(nil, ::T.untyped)
+  UploadIdMarker = ::T.let(nil, ::T.untyped)
+  UploadPartCopyOutput = ::T.let(nil, ::T.untyped)
+  UploadPartCopyRequest = ::T.let(nil, ::T.untyped)
+  UploadPartOutput = ::T.let(nil, ::T.untyped)
+  UploadPartRequest = ::T.let(nil, ::T.untyped)
+  UserMetadata = ::T.let(nil, ::T.untyped)
+  Value = ::T.let(nil, ::T.untyped)
+  VersionIdMarker = ::T.let(nil, ::T.untyped)
+  VersioningConfiguration = ::T.let(nil, ::T.untyped)
+  WebsiteConfiguration = ::T.let(nil, ::T.untyped)
+  WebsiteRedirectLocation = ::T.let(nil, ::T.untyped)
+  Years = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::Encryption::DecryptHandler
+  POSSIBLE_ENCRYPTION_FORMATS = ::T.let(nil, ::T.untyped)
+  POSSIBLE_ENVELOPE_KEYS = ::T.let(nil, ::T.untyped)
+  V1_ENVELOPE_KEYS = ::T.let(nil, ::T.untyped)
+  V2_ENVELOPE_KEYS = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::Encryption::IOEncrypter
+  ONE_MEGABYTE = ::T.let(nil, ::T.untyped)
+end
+
+module Aws::S3::Encryption::Utils
+  UNSAFE_MSG = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::FileDownloader
+  MAX_PARTS = ::T.let(nil, ::T.untyped)
+  MIN_CHUNK_SIZE = ::T.let(nil, ::T.untyped)
+  THREAD_COUNT = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::FileUploader
+  FIFTEEN_MEGABYTES = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::LegacySigner
+  SIGNED_QUERYSTRING_PARAMS = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::MultipartFileUploader
+  CREATE_OPTIONS = ::T.let(nil, ::T.untyped)
+  FILE_TOO_SMALL = ::T.let(nil, ::T.untyped)
+  MAX_PARTS = ::T.let(nil, ::T.untyped)
+  MIN_PART_SIZE = ::T.let(nil, ::T.untyped)
+  THREAD_COUNT = ::T.let(nil, ::T.untyped)
+  UPLOAD_PART_OPTIONS = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::MultipartStreamUploader
+  CREATE_OPTIONS = ::T.let(nil, ::T.untyped)
+  PART_SIZE = ::T.let(nil, ::T.untyped)
+  TEMPFILE_PREIX = ::T.let(nil, ::T.untyped)
+  THREAD_COUNT = ::T.let(nil, ::T.untyped)
+  UPLOAD_PART_OPTIONS = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::ObjectMultipartCopier
+  API_OPTIONS = ::T.let(nil, ::T.untyped)
+  FILE_TOO_SMALL = ::T.let(nil, ::T.untyped)
+  FIVE_MB = ::T.let(nil, ::T.untyped)
+  MAX_PARTS = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::Plugins::Md5s
+  REQUIRED_OPERATIONS = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::Plugins::Md5s::Handler
+  CHUNK_SIZE = ::T.let(nil, ::T.untyped)
+end
+
+class Aws::S3::Presigner
+  BLACKLISTED_HEADERS = ::T.let(nil, ::T.untyped)
+  FIFTEEN_MINUTES = ::T.let(nil, ::T.untyped)
+  ONE_WEEK = ::T.let(nil, ::T.untyped)
+end
+
 module Aws::STS
   GEM_VERSION = ::T.let(nil, ::T.untyped)
 end
@@ -367,6 +1112,8 @@ module Aws::STS::ClientApi
   DecodeAuthorizationMessageResponse = ::T.let(nil, ::T.untyped)
   ExpiredTokenException = ::T.let(nil, ::T.untyped)
   FederatedUser = ::T.let(nil, ::T.untyped)
+  GetAccessKeyInfoRequest = ::T.let(nil, ::T.untyped)
+  GetAccessKeyInfoResponse = ::T.let(nil, ::T.untyped)
   GetCallerIdentityRequest = ::T.let(nil, ::T.untyped)
   GetCallerIdentityResponse = ::T.let(nil, ::T.untyped)
   GetFederationTokenRequest = ::T.let(nil, ::T.untyped)
@@ -450,30 +1197,6 @@ class Binding
   def source_location(); end
 end
 
-class Bundler::CurrentRuby
-  def jruby_27?(); end
-
-  def maglev_27?(); end
-
-  def mingw_27?(); end
-
-  def mri_27?(); end
-
-  def mswin64_27?(); end
-
-  def mswin_27?(); end
-
-  def on_27?(); end
-
-  def rbx_27?(); end
-
-  def ruby_27?(); end
-
-  def truffleruby_27?(); end
-
-  def x64_mingw_27?(); end
-end
-
 Bundler::Deprecate = Gem::Deprecate
 
 class Bundler::Env
@@ -521,14 +1244,8 @@ class Bundler::Fetcher::AuthenticationRequiredError
   def initialize(remote_uri); end
 end
 
-class Bundler::Fetcher::AuthenticationRequiredError
-end
-
 class Bundler::Fetcher::BadAuthenticationError
   def initialize(remote_uri); end
-end
-
-class Bundler::Fetcher::BadAuthenticationError
 end
 
 class Bundler::Fetcher::Base
@@ -554,9 +1271,6 @@ end
 
 class Bundler::Fetcher::CertificateFailureError
   def initialize(remote_uri); end
-end
-
-class Bundler::Fetcher::CertificateFailureError
 end
 
 class Bundler::Fetcher::CompactIndex
@@ -621,12 +1335,6 @@ end
 class Bundler::Fetcher::Downloader
 end
 
-class Bundler::Fetcher::FallbackError
-end
-
-class Bundler::Fetcher::FallbackError
-end
-
 class Bundler::Fetcher::Index
   def fetch_spec(spec); end
 
@@ -636,17 +1344,8 @@ end
 class Bundler::Fetcher::Index
 end
 
-class Bundler::Fetcher::NetworkDownError
-end
-
-class Bundler::Fetcher::NetworkDownError
-end
-
 class Bundler::Fetcher::SSLError
   def initialize(msg=T.unsafe(nil)); end
-end
-
-class Bundler::Fetcher::SSLError
 end
 
 class Bundler::Fetcher
@@ -914,58 +1613,11 @@ end
 module Bundler::Plugin::API::Source
 end
 
-class Bundler::Plugin::DSL
-  def _gem(name, *args); end
-
-  def inferred_plugins(); end
-
-  def plugin(name, *args); end
-end
-
-class Bundler::Plugin::DSL::PluginGemfileError
-end
-
-class Bundler::Plugin::DSL::PluginGemfileError
-end
-
-class Bundler::Plugin::DSL
-end
-
 module Bundler::Plugin::Events
   GEM_AFTER_INSTALL = ::T.let(nil, ::T.untyped)
   GEM_AFTER_INSTALL_ALL = ::T.let(nil, ::T.untyped)
   GEM_BEFORE_INSTALL = ::T.let(nil, ::T.untyped)
   GEM_BEFORE_INSTALL_ALL = ::T.let(nil, ::T.untyped)
-end
-
-module Bundler::Plugin::Events
-  def self.defined_event?(event); end
-end
-
-class Bundler::Plugin::Index
-  def command_plugin(command); end
-
-  def commands(); end
-
-  def global_index_file(); end
-
-  def hook_plugins(event); end
-
-  def index_file(); end
-
-  def installed?(name); end
-
-  def load_paths(name); end
-
-  def local_index_file(); end
-
-  def plugin_path(name); end
-
-  def register_plugin(name, path, load_paths, commands, sources, hooks); end
-
-  def source?(source); end
-
-  def source_plugin(name); end
 end
 
 class Bundler::Plugin::Index::CommandConflict
@@ -980,9 +1632,6 @@ class Bundler::Plugin::Index::SourceConflict
 end
 
 class Bundler::Plugin::Index::SourceConflict
-end
-
-class Bundler::Plugin::Index
 end
 
 class Bundler::Plugin::Installer
@@ -1453,6 +2102,8 @@ class ERB::Compiler::Scanner
   DEFAULT_ETAGS = ::T.let(nil, ::T.untyped)
   DEFAULT_STAGS = ::T.let(nil, ::T.untyped)
 end
+
+Emitter = Psych::Stream::Emitter
 
 class Encoding
   def _dump(*_); end
@@ -2384,6 +3035,8 @@ JSON::State = JSON::Ext::Generator::State
 
 JSON::UnparserError = JSON::GeneratorError
 
+JSONTree = Psych::Visitors::JSONTree
+
 module JaroWinkler
   VERSION = ::T.let(nil, ::T.untyped)
 end
@@ -2547,6 +3200,8 @@ class Net::HTTP
   ENVIRONMENT_VARIABLE_IS_MULTIUSER_SAFE = ::T.let(nil, ::T.untyped)
 end
 
+Net::HTTP::ProxyMod = Net::HTTP::ProxyDelta
+
 class Net::HTTPAlreadyReported
   HAS_BODY = ::T.let(nil, ::T.untyped)
 end
@@ -2576,13 +3231,9 @@ end
 class Net::HTTPGatewayTimeout
 end
 
-class Net::HTTPInformation
-end
+Net::HTTPInformation::EXCEPTION_TYPE = Net::HTTPError
 
-Net::HTTPInformationCode::EXCEPTION_TYPE = Net::HTTPError
-
-class Net::HTTPInformation
-end
+Net::HTTPInformationCode = Net::HTTPInformation
 
 class Net::HTTPLoopDetected
   HAS_BODY = ::T.let(nil, ::T.untyped)
@@ -2651,15 +3302,7 @@ Net::HTTPServerError::EXCEPTION_TYPE = Net::HTTPFatalError
 
 Net::HTTPServerErrorCode = Net::HTTPServerError
 
-class Net::HTTP
-end
-
-Net::HTTPSession::ProxyDelta = Net::HTTP::ProxyDelta
-
-Net::HTTPSession::ProxyMod = Net::HTTP::ProxyDelta
-
-class Net::HTTP
-end
+Net::HTTPSession = Net::HTTP
 
 Net::HTTPSuccess::EXCEPTION_TYPE = Net::HTTPError
 
@@ -2898,6 +3541,57 @@ end
 
 module OpenSSL
   def self.fips_mode(); end
+end
+
+class Opsup::App
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Opsup::CLI::OptionBuilder
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Opsup::CLI
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Opsup::Config
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Opsup::Logger
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Opsup::StackOperator::CommandDeployer::Config
+  def app=(_x); end
+
+  def dryrun=(_x); end
+
+  def instance_ids=(_x); end
+
+  def mode=(_x); end
+
+  def stack=(_x); end
+end
+
+class Opsup::StackOperator::CommandDeployer::Config
+  def self.inherited(s); end
+end
+
+class Opsup::StackOperator::CommandDeployer
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Opsup::StackOperator
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 module Parallel
@@ -5114,18 +5808,6 @@ class Racc::Parser
   Racc_Runtime_Type = ::T.let(nil, ::T.untyped)
   Racc_Runtime_Version = ::T.let(nil, ::T.untyped)
   Racc_YY_Parse_Method = ::T.let(nil, ::T.untyped)
-end
-
-class Rainbow::Color::Named
-  NAMES = ::T.let(nil, ::T.untyped)
-end
-
-class Rainbow::Presenter
-  TERM_EFFECTS = ::T.let(nil, ::T.untyped)
-end
-
-module Rainbow::X11ColorNames
-  NAMES = ::T.let(nil, ::T.untyped)
 end
 
 module Random::Formatter
@@ -9039,6 +9721,8 @@ end
 module UnicodeNormalize
 end
 
+Visitor = Psych::Visitors::Visitor
+
 module Warning
   def warn(_); end
 end
@@ -9048,6 +9732,8 @@ module Warning
 end
 
 YAML = Psych
+
+YAMLTree = Psych::Visitors::YAMLTree
 
 module Zlib
   ASCII = ::T.let(nil, ::T.untyped)

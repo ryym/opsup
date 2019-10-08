@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.executables = ["opsup"]
 
   s.add_dependency 'aws-sdk-opsworks', '~> 1.0'
+  s.add_dependency 'aws-sdk-s3', '~> 1.0'
 
   s.add_development_dependency 'rubocop', '~> 0.71'
   s.add_development_dependency 'sorbet', '~> 0.4'
