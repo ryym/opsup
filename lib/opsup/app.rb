@@ -34,8 +34,9 @@ module Opsup
     sig { params(commands: T::Array[String], config: Opsup::Config).void }
     def run(commands, config)
       validate_commands(commands)
-      @logger.warn('Started in DRYRUN MODE') if config.dryrun
-      @logger.debug("Running #{commands} with #{config.to_h}")
+      @logger.warn('Starting in DRYRUN MODE') if config.dryrun
+      @logger.info("Commands: #{commands.join(',')}, Stack: #{config.stack_name}")
+      @logger.debug("Configuration details: #{config.to_h}")
 
       opsworks = new_opsworks_client(config)
       stack_operator = Opsup::StackOperator.create(opsworks: opsworks)
@@ -53,7 +54,8 @@ module Opsup
         deployer.run_command(command_to_opsworks_command(command))
       end
     ensure
-      @logger.warn('Finished in DRYRUN MODE') if config.dryrun
+      msg = 'Finished' + (config.dryrun ? ' (DRYRUN MODE)' : '')
+      @logger.info(msg)
     end
 
     sig { params(commands: T::Array[String]).void }
