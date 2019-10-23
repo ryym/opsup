@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    opsup (0.0.3)
+    opsup (0.0.4)
       aws-sdk-opsworks (~> 1.0)
       aws-sdk-s3 (~> 1.0)
 
@@ -10,8 +10,8 @@ GEM
   specs:
     ast (2.4.0)
     aws-eventstream (1.0.3)
-    aws-partitions (1.220.0)
-    aws-sdk-core (3.68.1)
+    aws-partitions (1.227.0)
+    aws-sdk-core (3.70.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
@@ -22,7 +22,7 @@ GEM
     aws-sdk-opsworks (1.20.0)
       aws-sdk-core (~> 3, >= 3.61.1)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.48.0)
+    aws-sdk-s3 (1.50.0)
       aws-sdk-core (~> 3, >= 3.61.1)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
