@@ -30,6 +30,14 @@ $ opsup --stack $YOUR_STACK_NAME --aws-cred $AWS_KEY,$AWS_SECRET deploy
 
 Opsup waits until the command completes.
 
+## How to Release
+
+1. Increment the version.
+2. Commit it and tag it with `v0.0.0` format.
+3. Push the tag.
+
+Then CI does the rest.
+
 ### TODO
 
 - Write tests
