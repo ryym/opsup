@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    opsup (0.0.4)
+    opsup (0.0.5)
       aws-sdk-opsworks (~> 1.0)
       aws-sdk-s3 (~> 1.0)
 
