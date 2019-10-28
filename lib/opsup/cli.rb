@@ -60,7 +60,7 @@ module Opsup
       # ref: https://docs.ruby-lang.org/en/2.1.0/OptionParser.html
       OptionParser.new do |p|
         p.version = Opsup::VERSION
-        p.banner = <<~BANNER
+        p.on_head(<<~HEAD)
           CLI to run Chef commands easily for your OpsWorks stacks.
           Usage:
             opsup [options] [commands...]
@@ -70,7 +70,13 @@ module Opsup
             opsup -s stack-name deploy
 
           Options:
-        BANNER
+        HEAD
+        p.on_tail(<<~TAIL)
+          Environment variables:
+            You can also specify options via environment variables
+            with the prefix 'OPSUP_'.
+            For example: OPSUP_STACK, OPSUP_AWS_CRED, and so on.
+        TAIL
       end
     end
   end
