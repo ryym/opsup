@@ -30,6 +30,8 @@ $ opsup --stack $YOUR_STACK_NAME --aws-cred $AWS_KEY,$AWS_SECRET deploy
 
 Opsup waits until the command completes.
 
+Run `opsup --help` for details.
+
 ## How to Release
 
 1. Increment the version.
